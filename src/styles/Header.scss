@@ -1,96 +1,87 @@
 .header {
-  position: relative;
-  height: 18rem;
+  min-height: 120px;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  background: linear-gradient(180deg, var(--yellow) 90%, transparent 100%);
+
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 
   .content {
     width: 100%;
-    height: 85%;
+    height: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--yellow);
 
     .karmosilogo {
-      height: 80%;
+      height: 90%;
+      max-width: 30%;
     }
 
     .cicafej {
-      height: 100%;
+      height: 105%;
     }
   }
-
   .navbar {
+    position: relative;
+    padding: 0 1rem;
     width: 100%;
-    height: 15%;
+    height: 20%;
     display: flex;
-    justify-content: space-around;
-    margin-top: -1%;
-    z-index: 1;
-    padding: 0 2rem;
-    gap: 1.5rem;
-    background: url("../assets/header/Nav.svg") repeat-x;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+
+    background: url("../assets/header/Nav.svg");
+    background-size: cover;
 
     .menu-item {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
-
+      gap: 0.5rem;
+      font-weight: 550;
+      font-size: 0.9rem;
+      color: var(--purple);
       cursor: pointer;
 
       &:hover {
+        .icon {
+          &.home,
+          &.kaosz,
+          &.contact {
+            transform: scale(1.1) rotate(-5deg);
+          }
+
+          &.char,
+          &.order {
+            transform: scale(1.1) rotate(5deg);
+          }
+        }
+
         p {
-          transform: translateY(0);
-        }
-
-        .home,
-        .kaosz,
-        .contact {
-          transform: scale(1.05) rotate(5deg);
-        }
-
-        .char,
-        .order {
-          transform: scale(1.05) rotate(-5deg);
+          transform: translateY(-0.1rem);
         }
       }
 
+      .icon,
       p {
-        font-size: 1rem;
-        font-weight: 700;
-        transform: translateY(0.1rem);
-        color: var(--purple);
-        white-space: nowrap;
         transition: transform 200ms ease-in;
       }
 
       .icon {
-        transition: transform 200ms ease-in;
-
-        &.home {
-          height: 60%;
-        }
-
-        &.char {
-          height: 55%;
-        }
-
-        &.kaosz {
-          height: 55%;
-        }
-
-        &.order {
-          height: 55%;
-        }
-
-        &.contact {
-          height: 50%;
-        }
+        height: 45%;
+        width: auto;
+        min-height: 12px;
+      }
+      p {
+        width: auto;
+        white-space: nowrap;
+        font-size: 1.8vw;
       }
     }
   }

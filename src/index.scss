@@ -4,27 +4,57 @@
   font-size: 20px;
   font-family: "Roboto", sans-serif;
 }
+
+@font-face {
+  font-family: "Cartoon";
+  src: url("./assets/Fonts/ActiveRegular.OTF");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.full {
-  width: 100%;
-  height: 100%;
-}
-
-html,
-body,
-#root,
-#root > div,
-.app {
-  width: 100%;
-  height: 100%;
+body {
+  min-height: 100vh;
 }
 
 .app {
-  background: url("./assets/bg.png") repeat-y;
-  background-size: cover;
+  height: 100%;
+  background: url("./assets/bg.png") no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  overflow-y: scroll;
+}
+
+.welcome-text {
+  font-size: 1.5rem;
+  font-family: "Cartoon";
+  text-align: center;
+  color: black;
+  width: 80%;
+  min-width: 320px;
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
 }

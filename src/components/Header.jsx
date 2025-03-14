@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Header.scss";
 import { ReactComponent as KarmosiLogo } from "../assets/header/KarmosiLogo.svg";
-import { ReactComponent as CicaFej } from "../assets/header/Cicafej.svg";
+import cicafej from "../assets/header/Cicafej.png";
 import { ReactComponent as Home } from "../assets/header/KezdőlapIcon.svg";
 import { ReactComponent as Char } from "../assets/header/SzereplőkIcon.svg";
 import { ReactComponent as Kaosz } from "../assets/header/KáoszKutyákIcon.svg";
@@ -14,7 +14,7 @@ export default function Header() {
     <header className="header">
       <div className="content">
         <KarmosiLogo className="karmosilogo" />
-        <CicaFej className="cicafej" />
+        <img src={cicafej} alt="Cicafej" className="cicafej" />
       </div>
       <div className="navbar">
         <MenuItem title="KEZDŐLAP" to="">

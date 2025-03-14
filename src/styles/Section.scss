@@ -1,0 +1,58 @@
+.sec {
+  position: relative;
+  width: 80%;
+  min-width: 340px;
+  min-height: 32rem;
+  aspect-ratio: 3 / 2;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem 3rem;
+  padding-top: 0;
+
+  display: grid;
+
+  margin-top: 2rem;
+  grid-template-rows: 1fr 8fr;
+  grid-template-columns: 1fr 1fr;
+
+  .title {
+    grid-column: 1 / 3;
+    min-height: 3rem;
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    font-family: "Cartoon", sans-serif;
+
+    //TODO: fix title size
+    p {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4vw;
+      color: var(--yellow);
+    }
+    .folt {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30%;
+      min-width: 80px;
+    }
+  }
+
+  .block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+}
