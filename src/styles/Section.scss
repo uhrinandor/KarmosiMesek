@@ -3,17 +3,25 @@
   width: 80%;
   min-width: 340px;
   min-height: 32rem;
-  aspect-ratio: 3 / 2;
   background-color: white;
   border-radius: 0.5rem;
-  padding: 2rem 3rem;
+  padding: 2rem;
   padding-top: 0;
 
   display: grid;
 
-  margin-top: 2rem;
-  grid-template-rows: 1fr 8fr;
-  grid-template-columns: 1fr 1fr;
+  margin: 2rem 0;
+
+  &.konyv {
+    aspect-ratio: 3 / 2;
+    grid-template-rows: 1fr 8fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.characters {
+    grid-template-rows: 1fr repeat(14, minmax(140px, 4fr));
+    grid-template-columns: 1fr 1fr;
+  }
 
   .title {
     grid-column: 1 / 3;
@@ -26,7 +34,6 @@
     height: auto;
     font-family: "Cartoon", sans-serif;
 
-    //TODO: fix title size
     p {
       position: absolute;
       left: 50%;

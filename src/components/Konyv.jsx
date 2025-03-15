@@ -1,14 +1,12 @@
 import Section from "./Section";
 import { BlockTitle, BreakText } from "./Text";
-import konyv from "../assets/akonyv/konyv design.png";
 import "../styles/Konyv.scss";
 
 export default function Konyv() {
   return (
-    <Section id="section" title="A KÖNYV" variant="1" className="konyv">
-      <div className="block">
+    <Section id="akonyv" title="A KÖNYV" variant="1" className="konyv">
+      <div className="block konyv-content">
         <BlockTitle>Mit találsz a könyvben?</BlockTitle>
-
         <BreakText>
           Izgalmas, humoros és tanulságos történeteket, amelyek a
           kíváncsiságról, bátorságról és barátságról szólnak. A történetek
@@ -25,7 +23,11 @@ export default function Konyv() {
         </BreakText>
       </div>
       <div className="block">
-        <img src={konyv} id="konyvdesign" alt="Karmosi mesék könyv" />
+        <img
+          src="http://karmosimesek.hu/assets/konyv.png"
+          id="konyvdesign"
+          alt="Karmosi mesék könyv"
+        />
       </div>
     </Section>
   );

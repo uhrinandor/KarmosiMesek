@@ -1,7 +1,6 @@
+import Characters from "./components/Characters";
 import Header from "./components/Header";
 import Konyv from "./components/Konyv";
-import Section from "./components/Section";
-import { BlockTitle, BreakText } from "./components/Text";
 
 function App() {
   return (
@@ -13,8 +12,7 @@ function App() {
         vezetőd!
       </p>
       <Konyv />
-      <Konyv />
-      <Konyv />
+      <Characters />
     </div>
   );
 }

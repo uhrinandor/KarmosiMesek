@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/Header.scss";
 import { ReactComponent as KarmosiLogo } from "../assets/header/KarmosiLogo.svg";
-import cicafej from "../assets/header/Cicafej.png";
 import { ReactComponent as Home } from "../assets/header/KezdőlapIcon.svg";
 import { ReactComponent as Char } from "../assets/header/SzereplőkIcon.svg";
 import { ReactComponent as Kaosz } from "../assets/header/KáoszKutyákIcon.svg";
@@ -11,10 +10,14 @@ import { useNavigate } from "react-router";
 
 export default function Header() {
   return (
-    <header className="header">
+    <header className="header" id="header">
       <div className="content">
         <KarmosiLogo className="karmosilogo" />
-        <img src={cicafej} alt="Cicafej" className="cicafej" />
+        <img
+          src="http://karmosimesek.hu/assets/cicafej.png"
+          alt="Cicafej"
+          className="cicafej"
+        />
       </div>
       <div className="navbar">
         <MenuItem title="KEZDŐLAP" to="">
@@ -40,7 +43,15 @@ export default function Header() {
 function MenuItem({ children, title, to }) {
   const navigate = useNavigate();
 
-  const onClick = () => navigate(`/#${to}`);
+  const onClick = () => {
+    navigate(`#${to}`);
+    setTimeout(() => {
+      const element = document.getElementById(to);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 50);
+  };
   return (
     <div className="menu-item" onClick={onClick}>
       {children}

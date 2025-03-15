@@ -1,0 +1,35 @@
+.image-left,
+.image-right {
+  img {
+    width: 100%;
+  }
+}
+
+.image-left {
+  grid-column: 1 / 2;
+}
+.image-right {
+  grid-column: 2 / 3;
+}
+
+.char-content-right,
+.char-content-left {
+  width: 1fr;
+  padding-left: 1.5rem;
+  justify-content: start;
+  .hol-mese {
+    display: inline;
+    color: var(--purple);
+  }
+
+  margin-bottom: auto;
+  margin-top: 25%;
+}
+
+.char-content-right {
+  grid-column: 2 / 3;
+}
+
+.char-content-left {
+  grid-column: 1 / 2;
+}

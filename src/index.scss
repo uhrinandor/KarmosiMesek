@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: "Cartoon";
-  src: url("./assets/Fonts/ActiveRegular.OTF");
+  src: url("./assets/fonts/ActiveRegular.OTF");
 }
 
 * {
@@ -16,13 +16,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .app {
   height: 100%;
-  background: url("./assets/bg.png") no-repeat;
+  background: url("http://karmosimesek.hu/assets/bg.png") no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
   display: flex;
