@@ -1,5 +1,6 @@
 import Characters from "./components/Characters";
 import Header from "./components/Header";
+import Kaosz from "./components/Kaosz";
 import Konyv from "./components/Konyv";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       </p>
       <Konyv />
       <Characters />
+      <Kaosz />
     </div>
   );
 }

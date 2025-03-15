@@ -1,0 +1,23 @@
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  aspect-ratio: 2 / 1;
+
+  cursor: pointer;
+  .svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+  }
+  p {
+    font-family: "Cartoon", sans-serif;
+    font-size: 1.8rem;
+    color: var(--purple);
+    z-index: 1;
+  }
+}
