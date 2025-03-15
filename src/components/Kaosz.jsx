@@ -5,7 +5,7 @@ import { Button } from "./Button";
 import { useState } from "react";
 
 export default function Kaosz() {
-  const [toPlay, setPlay] = useState(true);
+  const [toPlay, setPlay] = useState(false);
   const onClick = () => setPlay(true);
 
   return (

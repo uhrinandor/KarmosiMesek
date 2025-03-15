@@ -1,7 +1,9 @@
 import Characters from "./components/Characters";
 import Header from "./components/Header";
 import Kaosz from "./components/Kaosz";
+import Kapcsolat from "./components/Kapcsolat";
 import Konyv from "./components/Konyv";
+import Rendeles from "./components/Rendeles";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Konyv />
       <Characters />
       <Kaosz />
+      <Rendeles />
+      <Kapcsolat />
     </div>
   );
 }

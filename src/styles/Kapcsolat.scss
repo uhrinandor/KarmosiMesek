@@ -1,0 +1,46 @@
+.kapcsolat {
+  gap: 2rem;
+  .kapcsolat-image {
+    img {
+      width: 120%;
+      transform: translate(-15%);
+    }
+  }
+  .kapcsolat-content {
+    padding-left: 1.5rem;
+    .block-title {
+      margin-bottom: 10%;
+    }
+    .contact {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 2rem;
+      width: 100%;
+      min-height: 40px;
+      height: 4rem;
+
+      svg {
+        height: 60%;
+        width: auto;
+        transition: 150ms ease-in;
+      }
+
+      a {
+        font-size: 1.2rem;
+        transition: 150ms ease-in;
+      }
+
+      &:hover {
+        svg {
+          transform: rotate(-5deg) scale(1.1);
+        }
+
+        a {
+          transform: translateY(-0.1rem);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.rendeles {
+  column-gap: 3rem;
+
+  .rendeles-content {
+    grid-column: 2 /3;
+  }
+
+  .rendeles-image {
+    grid-column: 1 / 2;
+    img {
+      width: 110%;
+      transform: translateX(-5%);
+    }
+  }
+
+  .rendeles-button {
+    margin-top: 10%;
+    margin-left: 20%;
+  }
+}

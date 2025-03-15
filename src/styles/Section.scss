@@ -13,7 +13,7 @@
   margin: 2rem 0;
 
   &.konyv {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 3 / 2.5;
     grid-template-rows: 1fr 8fr;
     grid-template-columns: 1fr 1fr;
   }
@@ -27,6 +27,18 @@
     aspect-ratio: 4 / 3;
     grid-template-rows: 1fr 8fr;
     grid-template-columns: 1fr 1fr;
+  }
+
+  &.rendeles {
+    aspect-ratio: 3 / 2;
+    grid-template-rows: 1fr 8fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.kapcsolat {
+    aspect-ratio: 3 / 1.5;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 8fr;
   }
 
   .title {
