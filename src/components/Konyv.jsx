@@ -1,6 +1,7 @@
 import Section, { Block } from "./Section";
 import { BlockTitle, BreakText } from "./Text";
 import styles from "../styles/Konyv.module.scss";
+import { file } from "../utils/var";
 
 export default function Konyv() {
   return (
@@ -24,7 +25,7 @@ export default function Konyv() {
       </Block>
       <Block>
         <img
-          src="http://karmosimesek.hu/assets/konyv.png"
+          src={file("konyv.png")}
           id={styles.konyvdesign}
           alt="Karmosi mesék könyv"
         />

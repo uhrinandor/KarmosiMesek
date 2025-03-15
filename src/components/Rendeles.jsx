@@ -2,6 +2,7 @@ import styles from "../styles/Rendeles.module.scss";
 import Section, { Block } from "./Section";
 import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
+import { file } from "../utils/var";
 
 const RENDELES_LINK = "http://karmosimesek.hu";
 
@@ -18,7 +19,7 @@ export default function Rendeles() {
       variant="1"
     >
       <Block className={styles.image}>
-        <img src="http://karmosimesek.hu/assets/rendeles.png" alt="Rendelés" />
+        <img src={file("rendeles.png")} alt="Rendelés" />
       </Block>
       <Block className={styles.content}>
         <BlockTitle>Készen állsz a kalandra?</BlockTitle>

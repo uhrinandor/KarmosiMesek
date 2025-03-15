@@ -6,6 +6,7 @@ import { BlockTitle } from "./Text";
 import { ReactComponent as Face } from "../assets/bottom/FacebookIcon.svg";
 import { ReactComponent as Insta } from "../assets/bottom/InstaIcon.svg";
 import { ReactComponent as Tiktok } from "../assets/bottom/TikTokIcon.svg";
+import { file } from "../utils/var";
 
 export default function Kapcsolat() {
   return (
@@ -28,7 +29,7 @@ export default function Kapcsolat() {
         </Contact>
       </Block>
       <div className={styles.image}>
-        <img src="http://karmosimesek.hu/assets/kapcsolat.png" alt="" />
+        <img src={file("kapcsolat.png")} alt="" />
       </div>
     </Section>
   );

@@ -2,22 +2,23 @@ import Section, { Block } from "./Section";
 import styles from "../styles/Characters.module.scss";
 import { BlockTitle, CharText, QuoteText } from "./Text";
 import characters from "../utils/characters";
+import { file } from "../utils/var";
 
 const charImages = [
-  "http://karmosimesek.hu/assets/karakterek/karmosi.png",
-  "http://karmosimesek.hu/assets/karakterek/wilhelmina.png",
-  "http://karmosimesek.hu/assets/karakterek/kukacek.png",
-  "http://karmosimesek.hu/assets/karakterek/lapidus.png",
-  "http://karmosimesek.hu/assets/karakterek/monopator.png",
-  "http://karmosimesek.hu/assets/karakterek/pacal.png",
-  "http://karmosimesek.hu/assets/karakterek/kaoszszofi.png",
-  "http://karmosimesek.hu/assets/karakterek/ubi.png",
-  "http://karmosimesek.hu/assets/karakterek/paszomany.png",
-  "http://karmosimesek.hu/assets/karakterek/tuk.png",
-  "http://karmosimesek.hu/assets/karakterek/etcsotejcso.png",
-  "http://karmosimesek.hu/assets/karakterek/hotdog.png",
-  "http://karmosimesek.hu/assets/karakterek/brigecpurcel.png",
-  "http://karmosimesek.hu/assets/karakterek/csiba.png",
+  file("karakterek/karmosi.png"),
+  file("karakterek/wilhelmina.png"),
+  file("karakterek/kukacek.png"),
+  file("karakterek/lapidus.png"),
+  file("karakterek/monopator.png"),
+  file("karakterek/pacal.png"),
+  file("karakterek/kaoszszofi.png"),
+  file("karakterek/ubi.png"),
+  file("karakterek/paszomany.png"),
+  file("karakterek/tuk.png"),
+  file("karakterek/etcsotejcso.png"),
+  file("karakterek/hotdog.png"),
+  file("karakterek/brigecpurcel.png"),
+  file("karakterek/csiba.png"),
 ];
 
 export default function Characters() {

@@ -3,6 +3,7 @@ import styles from "../styles/Kaosz.module.scss";
 import { BlockTitle, BreakText, CharText } from "./Text";
 import { Button } from "./Button";
 import { useState } from "react";
+import { file } from "../utils/var";
 
 export default function Kaosz() {
   const [toPlay, setPlay] = useState(false);
@@ -34,10 +35,7 @@ function Root({ onClick }) {
         </Button>
       </Block>
       <Block className={styles.image}>
-        <img
-          src="http://karmosimesek.hu/assets/kaoszkutyak.png"
-          alt="Káosz kutyák"
-        />
+        <img src={file("kaoszkutyak.png")} alt="Káosz kutyák" />
       </Block>
     </>
   );
@@ -51,13 +49,10 @@ function Player() {
 
   return (
     <>
-      <div className="block player">
-        <img
-          src="http://karmosimesek.hu/assets/karakterek/kaoszszofi.png"
-          alt=""
-        />
-      </div>
-      <div className="block"></div>
+      <Block className={styles.player}>
+        <img src={file("karakterek/kaoszszofi.png")} alt="" />
+      </Block>
+      <Block className=""></Block>
     </>
   );
 }

@@ -7,6 +7,7 @@ import { ReactComponent as Kaosz } from "../assets/header/KáoszKutyákIcon.svg"
 import { ReactComponent as Support } from "../assets/header/RendelésIcon.svg";
 import { ReactComponent as Contact } from "../assets/header/KapcsolatIcon.svg";
 import { useNavigate } from "react-router";
+import { file } from "../utils/var";
 
 export default function Header() {
   return (
@@ -14,7 +15,7 @@ export default function Header() {
       <div className={styles.content}>
         <KarmosiLogo className={styles.karmosilogo} />
         <img
-          src="http://karmosimesek.hu/assets/cicafej.png"
+          src={file("/cicafej.png")}
           alt="Cicafej"
           className={styles.cicafej}
         />
