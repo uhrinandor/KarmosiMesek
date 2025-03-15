@@ -1,0 +1,38 @@
+.kaosz {
+  aspect-ratio: 2 / 1.4;
+  grid-template-rows: 1fr 8fr;
+  grid-template-columns: 1fr 1fr;
+
+  .content {
+    grid-column: 1 / 2;
+    height: 100%;
+    padding-left: 1.5rem;
+    p {
+      display: inline;
+      p {
+        color: var(--purple);
+      }
+    }
+
+    .play {
+      margin-top: 10%;
+      margin-right: auto;
+      margin-left: 15%;
+    }
+  }
+
+  .image {
+    grid-column: 2 / 3;
+
+    img {
+      margin-top: auto;
+      width: 110%;
+    }
+  }
+
+  .player {
+    img {
+      width: 100%;
+    }
+  }
+}

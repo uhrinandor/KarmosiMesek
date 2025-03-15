@@ -1,16 +1,19 @@
 .kapcsolat {
-  gap: 2rem;
-  .kapcsolat-image {
+  aspect-ratio: 3 / 1.5;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 8fr;
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       width: 120%;
-      transform: translate(-15%);
     }
   }
-  .kapcsolat-content {
-    padding-left: 1.5rem;
-    .block-title {
-      margin-bottom: 10%;
-    }
+  .content {
+    gap: 2rem;
+
     .contact {
       cursor: pointer;
       display: flex;

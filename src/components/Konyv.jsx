@@ -1,11 +1,11 @@
-import Section from "./Section";
+import Section, { Block } from "./Section";
 import { BlockTitle, BreakText } from "./Text";
-import "../styles/Konyv.scss";
+import styles from "../styles/Konyv.module.scss";
 
 export default function Konyv() {
   return (
-    <Section id="akonyv" title="A KÖNYV" variant="1" className="konyv">
-      <div className="block konyv-content">
+    <Section id="akonyv" title="A KÖNYV" variant="1" className={styles.konyv}>
+      <Block className={styles.content}>
         <BlockTitle>Mit találsz a könyvben?</BlockTitle>
         <BreakText>
           Izgalmas, humoros és tanulságos történeteket, amelyek a
@@ -21,14 +21,14 @@ export default function Konyv() {
           Megismerheted a KáoszKutyák zenekar megalakulásának igaz történetét,
           valamint meghallgathatod a Gőzölgő Velőscsont című albumukat!
         </BreakText>
-      </div>
-      <div className="block">
+      </Block>
+      <Block>
         <img
           src="http://karmosimesek.hu/assets/konyv.png"
-          id="konyvdesign"
+          id={styles.konyvdesign}
           alt="Karmosi mesék könyv"
         />
-      </div>
+      </Block>
     </Section>
   );
 }

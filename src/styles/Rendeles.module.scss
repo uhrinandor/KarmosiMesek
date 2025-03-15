@@ -1,11 +1,14 @@
 .rendeles {
+  aspect-ratio: 3 / 2;
+  grid-template-rows: 1fr 8fr;
+  grid-template-columns: 1fr 1fr;
   column-gap: 3rem;
 
-  .rendeles-content {
+  .content {
     grid-column: 2 /3;
   }
 
-  .rendeles-image {
+  .image {
     grid-column: 1 / 2;
     img {
       width: 110%;
@@ -13,7 +16,7 @@
     }
   }
 
-  .rendeles-button {
+  .button {
     margin-top: 10%;
     margin-left: 20%;
   }

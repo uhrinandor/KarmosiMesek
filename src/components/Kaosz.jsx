@@ -1,5 +1,5 @@
-import Section from "./Section";
-import "../styles/Kaosz.scss";
+import Section, { Block } from "./Section";
+import styles from "../styles/Kaosz.module.scss";
 import { BlockTitle, BreakText, CharText } from "./Text";
 import { Button } from "./Button";
 import { useState } from "react";
@@ -13,7 +13,7 @@ export default function Kaosz() {
       id="kaoszkutyak"
       title="KÁOSZ KUTYÁK"
       variant="1"
-      className="kaosz"
+      className={styles.kaosz}
     >
       {toPlay ? <Player /> : <Root onClick={onClick} />}
     </Section>
@@ -23,22 +23,22 @@ export default function Kaosz() {
 function Root({ onClick }) {
   return (
     <>
-      <div className="block kaosz-content">
+      <Block className={styles.content}>
         <BlockTitle>Végre itt vannak!</BlockTitle>
         <BreakText>Az utca rosszcsontjai új albummal debütáltak!</BreakText>
         <CharText>
           Hallgasd meg most <p>Gőzölgő Velőscsont</p> című albumukat!
         </CharText>
-        <Button onClick={onClick} className="play">
+        <Button onClick={onClick} className={styles.play}>
           LEJÁTSZÁS
         </Button>
-      </div>
-      <div className="block kaosz-image">
+      </Block>
+      <Block className={styles.image}>
         <img
           src="http://karmosimesek.hu/assets/kaoszkutyak.png"
           alt="Káosz kutyák"
         />
-      </div>
+      </Block>
     </>
   );
 }

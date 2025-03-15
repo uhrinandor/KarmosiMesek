@@ -1,5 +1,5 @@
-import "../styles/Rendeles.scss";
-import Section from "./Section";
+import styles from "../styles/Rendeles.module.scss";
+import Section, { Block } from "./Section";
 import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 
@@ -11,21 +11,26 @@ export default function Rendeles() {
   };
 
   return (
-    <Section className="rendeles" id="rendeles" title="RENDELÉS" variant="1">
-      <div className="block rendeles-image">
+    <Section
+      className={styles.rendeles}
+      id="rendeles"
+      title="RENDELÉS"
+      variant="1"
+    >
+      <Block className={styles.image}>
         <img src="http://karmosimesek.hu/assets/rendeles.png" alt="Rendelés" />
-      </div>
-      <div className="block rendeles-content">
+      </Block>
+      <Block className={styles.content}>
         <BlockTitle>Készen állsz a kalandra?</BlockTitle>
         <BreakText>
           A Karmosi Mesék könyv teljes pompájában, most elérhetővé vált mindenki
           számára, weboldalunkon megvásárolhatod kedvezményes áron, különböző
           csomagokban!
         </BreakText>
-        <Button onClick={toRendeles} className="rendeles-button">
+        <Button onClick={toRendeles} className={styles.button}>
           RENDELÉS
         </Button>
-      </div>
+      </Block>
     </Section>
   );
 }

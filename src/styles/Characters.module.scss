@@ -1,3 +1,9 @@
+.characters {
+  grid-template-rows: 1fr repeat(14, minmax(140px, 4fr));
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
 .image-left,
 .image-right {
   img {
@@ -12,12 +18,10 @@
   grid-column: 2 / 3;
 }
 
-.char-content-right,
-.char-content-left {
+.content-right,
+.content-left {
   width: 1fr;
-  padding-left: 1.5rem;
-  justify-content: start;
-  .hol-mese {
+  .mese {
     display: inline;
     color: var(--purple);
   }
@@ -26,10 +30,10 @@
   margin-top: 25%;
 }
 
-.char-content-right {
+.content-right {
   grid-column: 2 / 3;
 }
 
-.char-content-left {
+.content-left {
   grid-column: 1 / 2;
 }

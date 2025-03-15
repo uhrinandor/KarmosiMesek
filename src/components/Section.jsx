@@ -1,23 +1,27 @@
-import "../styles/Section.scss";
+import styles from "../styles/Section.module.scss";
 import { ReactComponent as FoltUno } from "../assets/sections/FoltUno.svg";
 import { ReactComponent as FoltDos } from "../assets/sections/FoltDos.svg";
 
 export default function Section({ children, title, variant, id, className }) {
   return (
-    <section id={id} className={`sec ${className}`}>
+    <section id={id} className={`${styles.sec} ${className}`}>
       <Title variant={variant}>{title}</Title>
       {children}
     </section>
   );
 }
 
+export function Block({ children, className }) {
+  return <div className={`${styles.block} ${className}`}>{children}</div>;
+}
+
 function Title({ children, variant }) {
   return (
-    <div className={`${variant} title`}>
+    <div className={`${variant} ${styles.title}`}>
       {variant === "1" ? (
-        <FoltUno className="folt" />
+        <FoltUno className={styles.folt} />
       ) : (
-        <FoltDos className="folt" />
+        <FoltDos className={styles.folt} />
       )}
       <p>{children}</p>
     </div>

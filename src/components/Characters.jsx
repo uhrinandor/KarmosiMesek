@@ -1,5 +1,5 @@
-import Section from "./Section";
-import "../styles/Characters.scss";
+import Section, { Block } from "./Section";
+import styles from "../styles/Characters.module.scss";
 import { BlockTitle, CharText, QuoteText } from "./Text";
 import characters from "../utils/characters";
 
@@ -23,43 +23,37 @@ const charImages = [
 export default function Characters() {
   const arr = Array.from({ length: 14 }, (_, i) => i + 1);
   return (
-    <Section id="szereplok" title="SZEREPLŐK" className="characters">
+    <Section id="szereplok" title="SZEREPLŐK" className={styles.characters}>
       {arr.map((i) => {
-        if (i % 2 === 1) {
-          return (
-            <>
-              <div className="image-left block">
-                <img src={charImages[i - 1]} alt="Karmosi úr" />
-              </div>
-              <div className="char-content-right block">
-                <BlockTitle>{characters[i - 1].nev}</BlockTitle>
-                <QuoteText>{characters[i - 1].idezet}</QuoteText>
-                <CharText>{characters[i - 1].bemutato}</CharText>
-                <CharText>
-                  {characters[i - 1].hol.eleje}
-                  <p className="hol-mese"> {characters[i - 1].hol.mese} </p>
-                  {characters[i - 1].hol.end}
-                </CharText>
-              </div>
-            </>
-          );
-        }
+        const isOdd = i % 2 === 1;
+        const char = characters[i - 1];
+        const image = (
+          <Block
+            className={isOdd ? styles["image-left"] : styles["image-right"]}
+          >
+            <img src={charImages[i - 1]} alt="Karmosi úr" />
+          </Block>
+        );
+
+        const content = (
+          <Block
+            className={isOdd ? styles["content-right"] : styles["content-left"]}
+          >
+            <BlockTitle>{char.nev}</BlockTitle>
+            <QuoteText>{char.idezet}</QuoteText>
+            <CharText>{char.bemutato}</CharText>
+            <CharText>
+              {char.hol.eleje}
+              <p className={styles["mese"]}> {char.hol.mese} </p>
+              {char.hol.end}
+            </CharText>
+          </Block>
+        );
 
         return (
           <>
-            <div className="char-content-left block">
-              <BlockTitle>{characters[i - 1].nev}</BlockTitle>
-              <QuoteText>{characters[i - 1].idezet}</QuoteText>
-              <CharText>{characters[i - 1].bemutato}</CharText>
-              <CharText>
-                {characters[i - 1].hol.eleje}
-                <p className="hol-mese"> {characters[i - 1].hol.mese} </p>
-                {characters[i - 1].hol.end}
-              </CharText>
-            </div>
-            <div className="image-right block">
-              <img src={charImages[i - 1]} alt="Karmosi úr" />
-            </div>
+            {isOdd ? image : content}
+            {isOdd ? content : image}
           </>
         );
       })}

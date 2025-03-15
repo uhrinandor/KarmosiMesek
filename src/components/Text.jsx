@@ -1,17 +1,17 @@
-import "../styles/Text.scss";
+import styles from "../styles/Text.module.scss";
 
-export function BlockTitle({ children }) {
-  return <p className="block-title">{children}</p>;
+export function BlockTitle({ children, className }) {
+  return <p className={`${styles["block-title"]} ${className}`}>{children}</p>;
 }
 
 export function BreakText({ children }) {
-  return <p className="break-text">{children}</p>;
+  return <p className={styles["break-text"]}>{children}</p>;
 }
 
 export function CharText({ children }) {
-  return <p className="char-text">{children}</p>;
+  return <p className={styles["char-text"]}>{children}</p>;
 }
 
 export function QuoteText({ children }) {
-  return <p className="quote">"{children}"</p>;
+  return <p className={styles.quote}>"{children}"</p>;
 }
