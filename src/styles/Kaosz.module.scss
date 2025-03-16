@@ -6,18 +6,15 @@
   .content {
     grid-column: 1 / 2;
     height: 100%;
-    padding-left: 1.5rem;
     p {
       display: inline;
-      p {
+      span {
         color: var(--purple);
       }
     }
 
     .play {
       margin-top: 10%;
-      margin-right: auto;
-      margin-left: 15%;
     }
   }
 

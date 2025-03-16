@@ -28,7 +28,7 @@ function Root({ onClick }) {
         <BlockTitle>Végre itt vannak!</BlockTitle>
         <BreakText>Az utca rosszcsontjai új albummal debütáltak!</BreakText>
         <CharText>
-          Hallgasd meg most <p>Gőzölgő Velőscsont</p> című albumukat!
+          Hallgasd meg most <span>Gőzölgő Velőscsont</span> című albumukat!
         </CharText>
         <Button onClick={onClick} className={styles.play}>
           LEJÁTSZÁS

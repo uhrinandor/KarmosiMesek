@@ -27,11 +27,11 @@ html {
 
 body {
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .app {
   height: 100%;
+  max-width: 100vw;
   background: url("http://karmosimesek.hu/assets/bg.png") no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -39,8 +39,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .welcome-text {
@@ -49,7 +48,11 @@ body {
   text-align: center;
   color: black;
   width: 80%;
-  min-width: 320px;
+  min-width: 340px;
+}
+
+#root {
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 480px) {

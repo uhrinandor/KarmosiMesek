@@ -30,6 +30,7 @@ export default function Characters() {
         const char = characters[i - 1];
         const image = (
           <Block
+            key={i}
             className={isOdd ? styles["image-left"] : styles["image-right"]}
           >
             <img src={charImages[i - 1]} alt="Karmosi úr" />
@@ -39,13 +40,14 @@ export default function Characters() {
         const content = (
           <Block
             className={isOdd ? styles["content-right"] : styles["content-left"]}
+            key={char.nev}
           >
             <BlockTitle>{char.nev}</BlockTitle>
             <QuoteText>{char.idezet}</QuoteText>
             <CharText>{char.bemutato}</CharText>
             <CharText>
               {char.hol.eleje}
-              <p className={styles["mese"]}> {char.hol.mese} </p>
+              <span className={styles["mese"]}> {char.hol.mese} </span>
               {char.hol.end}
             </CharText>
           </Block>

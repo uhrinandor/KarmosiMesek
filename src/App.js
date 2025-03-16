@@ -1,3 +1,4 @@
+import Back from "./components/Back";
 import Characters from "./components/Characters";
 import Header from "./components/Header";
 import Kaosz from "./components/Kaosz";
@@ -19,6 +20,7 @@ function App() {
       <Kaosz />
       <Rendeles />
       <Kapcsolat />
+      <Back />
     </div>
   );
 }
