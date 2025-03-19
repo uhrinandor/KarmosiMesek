@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Kaosz from "./components/Kaosz";
 import Kapcsolat from "./components/Kapcsolat";
 import Konyv from "./components/Konyv";
+import Quest from "./components/Quest";
 import Rendeles from "./components/Rendeles";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Konyv />
       <Characters />
       <Kaosz />
+      <Quest />
       <Rendeles />
       <Kapcsolat />
       <Back />

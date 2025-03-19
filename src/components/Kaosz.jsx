@@ -4,6 +4,7 @@ import { BlockTitle, BreakText, CharText } from "./Text";
 import { Button } from "./Button";
 import { useState, useRef, useEffect, useReducer, useMemo } from "react";
 import { file } from "../utils/var";
+import { useNavigate } from "react-router";
 import music from "../utils/music";
 
 import { ReactComponent as PlayIcon } from "../assets/components/Play.svg";
@@ -103,6 +104,18 @@ const musicReducer = (state, action) => {
 };
 
 function Player() {
+  const nav = useNavigate();
+
+  const onTovabbiak = () => {
+    nav(`#feladat`);
+    setTimeout(() => {
+      const element = document.getElementById("feladat");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 50);
+  };
+
   const [state, dispatch] = useReducer(musicReducer, initialState);
   const { currentMusic, isPlaying, progress, mp, showLyrics } = state;
   const song = useMemo(() => music[currentMusic], [currentMusic]);
@@ -241,7 +254,9 @@ function Player() {
               <span>{formatTime(s.duration)}</span>
             </div>
           ))}
-          <Button className={styles.continue}>TOVÁBBIAK</Button>
+          <Button onClick={onTovabbiak} className={styles.continue}>
+            TOVÁBBIAK
+          </Button>
         </Block>
       )}
     </>
