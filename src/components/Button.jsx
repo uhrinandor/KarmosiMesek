@@ -1,4 +1,4 @@
-import { useMemo, useRef } from "react";
+import { useMemo } from "react";
 import styles from "../styles/Button.module.scss";
 import { motion } from "framer-motion";
 

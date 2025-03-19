@@ -4,8 +4,8 @@ export function BlockTitle({ children, className }) {
   return <p className={`${styles["block-title"]} ${className}`}>{children}</p>;
 }
 
-export function BreakText({ children }) {
-  return <p className={styles["break-text"]}>{children}</p>;
+export function BreakText({ children, className }) {
+  return <p className={`${className} ${styles["break-text"]}`}>{children}</p>;
 }
 
 export function CharText({ children }) {

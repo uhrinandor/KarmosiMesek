@@ -14,7 +14,7 @@ import { ReactComponent as MicIcon } from "../assets/components/Mic.svg";
 import { ReactComponent as ListIcon } from "../assets/components/List.svg";
 
 export default function Kaosz() {
-  const [toPlay, setPlay] = useState(true);
+  const [toPlay, setPlay] = useState(false);
   const onClick = () => setPlay(true);
 
   return (
@@ -23,6 +23,9 @@ export default function Kaosz() {
       title="KÁOSZ KUTYÁK"
       variant="1"
       className={styles.kaosz}
+      style={{
+        "grid-template-columns": toPlay ? "5fr 3fr" : "1fr 1fr",
+      }}
     >
       {toPlay ? <Player /> : <Root onClick={onClick} />}
     </Section>
@@ -74,10 +77,7 @@ const musicReducer = (state, action) => {
     case "SET_MUSIC":
       return {
         ...state,
-        currentMusic:
-          action.payload < 0
-            ? (action.payload + music.length) % music.length
-            : action.payload % music.length,
+        currentMusic: action.payload,
         progress: 0,
         isPlaying: true,
       };
@@ -109,7 +109,6 @@ function Player() {
   const audioRef = useRef(null);
   const timeRef = useRef(0);
 
-  const chooseMusic = (i) => () => dispatch({ type: "SET_MUSIC", payload: i });
   const playPause = () => dispatch({ type: "TOGGLE_PLAY_PAUSE" });
 
   const handleSongChange = (i) => {
@@ -215,9 +214,35 @@ function Player() {
         </div>
       </Block>
       {showLyrics ? (
-        <Block className="">Hello Lyrics</Block>
+        <Block className={styles["lyrics-content"]}>
+          <BlockTitle className={styles.title}>{song.nev}</BlockTitle>
+          <div className={styles["lyrics-cont"]}>
+            {song.lyrics.map((lyric, i) => (
+              <BreakText className={styles["lyrics-block"]} key={i}>
+                {lyric}
+              </BreakText>
+            ))}
+          </div>
+        </Block>
       ) : (
-        <Block className="">Hello Lista</Block>
+        <Block className={styles["playlist"]}>
+          <BlockTitle className={styles.title}>Gőzölgő Velőscsont</BlockTitle>
+          {music.map((s, i) => (
+            <div
+              onClick={() => handleSongChange(i)}
+              key={i}
+              className={styles["playlist-item"]}
+            >
+              <p
+                className={currentMusic === i ? styles["selected"] : undefined}
+              >
+                {s.nev}
+              </p>
+              <span>{formatTime(s.duration)}</span>
+            </div>
+          ))}
+          <Button className={styles.continue}>TOVÁBBIAK</Button>
+        </Block>
       )}
     </>
   );
