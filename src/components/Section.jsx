@@ -1,6 +1,7 @@
 import styles from "../styles/Section.module.scss";
 import { ReactComponent as FoltUno } from "../assets/sections/FoltUno.svg";
 import { ReactComponent as FoltDos } from "../assets/sections/FoltDos.svg";
+import { motion } from "framer-motion";
 
 export default function Section({ children, title, variant, id, className }) {
   return (

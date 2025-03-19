@@ -5,6 +5,7 @@
   position: relative;
   padding: 0.3rem;
   width: 60%;
+  min-height: 55px;
   cursor: pointer;
 
   .svg {
@@ -20,5 +21,11 @@
     font-family: "Cartoon";
     color: var(--purple);
     font-size: 1.6rem;
+    transition: color 150ms ease-in;
+    pointer-events: none;
+  }
+
+  &:hover p {
+    color: var(--yellow);
   }
 }
