@@ -78,7 +78,10 @@ const musicReducer = (state, action) => {
     case "SET_MUSIC":
       return {
         ...state,
-        currentMusic: action.payload,
+        currentMusic:
+          action.payload === -1
+            ? music.length - 1
+            : action.payload % music.length,
         progress: 0,
         isPlaying: true,
       };

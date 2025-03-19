@@ -6,7 +6,7 @@ import { BlockTitle } from "./Text";
 import { ReactComponent as Face } from "../assets/bottom/FacebookIcon.svg";
 import { ReactComponent as Insta } from "../assets/bottom/InstaIcon.svg";
 import { ReactComponent as Tiktok } from "../assets/bottom/TikTokIcon.svg";
-import { file } from "../utils/var";
+import { file, social } from "../utils/var";
 
 export default function Kapcsolat() {
   return (
@@ -18,7 +18,7 @@ export default function Kapcsolat() {
     >
       <Block className={styles.content}>
         <BlockTitle>Hol találsz meg minket?</BlockTitle>
-        <Contact text="Karmosi Mesék">
+        <Contact text="Karmosi Mesék" link={social.FACEBOOK}>
           <Face />
         </Contact>
         <Contact text="@karmosimesek">

@@ -45,7 +45,7 @@
       align-items: center;
       gap: 0.5rem;
       font-weight: 550;
-      font-size: min(0.9vw, 1.1rem);
+
       color: var(--purple);
       cursor: pointer;
 
@@ -76,12 +76,12 @@
       .icon {
         height: 45%;
         width: auto;
-        min-height: 12px;
+        min-height: 0.7rem;
       }
       p {
         width: auto;
         white-space: nowrap;
-        font-size: 1.8vw;
+        font-size: min (0.9vw, 2rem);
       }
     }
   }

@@ -33,13 +33,35 @@ const reducer = (state, action) => {
   }
 };
 
+function calcGrid(blocks) {
+  let cols = Math.min(2, blocks); // Maximum 2 columns
+  let rows = Math.ceil(blocks / cols); // Calculate required rows
+
+  return {
+    columns: cols,
+    rows: rows,
+  };
+}
+
 export default function Quest() {
   const [state, dispatch] = useReducer(reducer, initState);
   const { showLyrics, currentSong } = state;
   const song = useMemo(() => questMusic[currentSong], [currentSong]);
+  const grid = useMemo(
+    () => calcGrid(song.lyrics.length),
+    [song.lyrics.length]
+  );
 
   return (
-    <Section title="FELADAT" variant="2" id="feladat" className={styles.quest}>
+    <Section
+      title="FELADAT"
+      variant="2"
+      id="feladat"
+      className={styles.quest}
+      style={{
+        "grid-template-columns": showLyrics ? "1fr 2fr" : "2fr 3fr",
+      }}
+    >
       {showLyrics ? (
         <>
           <Block className={styles["music-list"]}>
@@ -68,7 +90,13 @@ export default function Quest() {
             <BlockTitle className={styles["lyrics-title"]}>
               {song.nev}
             </BlockTitle>
-            <div className={styles["lyrics-content"]}>
+            <div
+              className={styles["lyrics-content"]}
+              style={{
+                "grid-template-rows": `repeat(${grid.rows}, 1fr)`,
+                "grid-template-columns": `repeat(${grid.columns}, 1fr)`,
+              }}
+            >
               {song.lyrics.map((b, i) => (
                 <BreakText className={styles["lyrics-block"]} key={i}>
                   {b}

@@ -25,7 +25,7 @@
       height: 4rem;
 
       svg {
-        height: 75%;
+        height: 60%;
         max-height: 3rem;
         width: auto;
         transition: 150ms ease-in;
@@ -33,12 +33,13 @@
 
       a {
         font-size: 1.2rem;
+        color: black;
         transition: 150ms ease-in;
       }
 
       &:hover {
         svg {
-          transform: rotate(-5deg) scale(1.1);
+          transform: rotate(-3deg) scale(1.05);
         }
 
         a {

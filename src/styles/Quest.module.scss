@@ -1,7 +1,6 @@
 .quest {
   aspect-ratio: 3 / 2;
   grid-template-rows: 2fr 8fr;
-  grid-template-columns: 2fr 3fr;
   column-gap: 1rem;
 
   .image {
@@ -29,29 +28,21 @@
   }
 
   .lyrics {
-    .lyrics-title {
-      align-self: center;
-
-      @media (max-width: 1024px) {
-        align-self: flex-start;
-      }
-    }
-
+    width: 3fr;
     .lyrics-content {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-      grid-template-rows: auto;
+      grid-auto-flow: column;
       scrollbar-width: none;
       overflow-y: scroll;
-      overflow-x: hidden;
-      gap: 0.5rem;
+      gap: 1rem 0;
 
       .lyrics-block {
         display: flex;
         justify-content: flex-start;
-        align-items: start;
+        align-items: flex-start;
         margin: 0;
+        font-size: 0.7rem;
         white-space: pre-line;
       }
     }

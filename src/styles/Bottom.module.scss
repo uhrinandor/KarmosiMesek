@@ -1,0 +1,42 @@
+.bottom {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  min-height: 3rem;
+
+  gap: min(1rem, 2vw);
+
+  background: url("../assets/bottom/Bottom.svg") no-repeat;
+  background-size: cover;
+  .bottomsvg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    min-width: 100vw;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+  p {
+    position: relative;
+    font-size: 1.4rem;
+    font-family: "Cartoon";
+    color: var(--purple);
+  }
+
+  .icon {
+    position: relative;
+    height: 60%;
+    transition: transform 150ms ease;
+
+    &:hover {
+      transform: scale(1.05) rotate(-3deg);
+    }
+  }
+
+  #face {
+    margin-left: auto;
+  }
+}
