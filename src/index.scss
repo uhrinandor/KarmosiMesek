@@ -1,5 +1,6 @@
 :root {
   --yellow: #ffdb8e;
+  --bg: #fefdf9;
   --purple: #7c6cc9;
   font-size: 20px;
   font-family: "Roboto Condensed", sans-serif;
@@ -20,6 +21,13 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 html {
@@ -51,7 +59,7 @@ body {
   text-align: center;
   color: black;
   width: 80%;
-  min-width: 340px;
+  min-width: 300px;
 }
 
 #root {

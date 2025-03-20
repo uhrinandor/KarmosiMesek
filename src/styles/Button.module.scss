@@ -3,8 +3,9 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 2rem;
-  min-height: 24px;
+  padding: 1rem 2rem;
+  width: min(15rem, 70%);
+  aspect-ratio: 4 / 1;
   cursor: pointer;
 
   .svg {

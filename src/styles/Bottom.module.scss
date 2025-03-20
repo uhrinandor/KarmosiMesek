@@ -10,15 +10,7 @@
 
   background: url("../assets/bottom/Bottom.svg") no-repeat;
   background-size: cover;
-  .bottomsvg {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 100%;
-    min-width: 100vw;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-  }
+
   p {
     position: relative;
     font-size: 1.4rem;
@@ -28,7 +20,7 @@
 
   .icon {
     position: relative;
-    height: 60%;
+    height: 1.9rem;
     transition: transform 150ms ease;
 
     &:hover {

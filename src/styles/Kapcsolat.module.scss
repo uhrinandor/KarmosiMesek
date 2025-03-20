@@ -1,5 +1,5 @@
 .kapcsolat {
-  aspect-ratio: 3 / 1.5;
+  aspect-ratio: 3 / 2;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 8fr;
 
@@ -24,7 +24,9 @@
       min-height: 40px;
       height: 4rem;
 
-      svg {
+      #face,
+      #insta,
+      #tiktok {
         height: 60%;
         max-height: 3rem;
         width: auto;
@@ -38,7 +40,9 @@
       }
 
       &:hover {
-        svg {
+        #face,
+        #insta,
+        #tiktok {
           transform: rotate(-3deg) scale(1.05);
         }
 

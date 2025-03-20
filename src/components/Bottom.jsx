@@ -13,8 +13,16 @@ export default function Bottom() {
         className={styles.icon}
         onClick={() => link(social.FACEBOOK)}
       />
-      <Insta id={styles.insta} className={styles.icon} />
-      <Tiktok id={styles.tiktok} className={styles.icon} />
+      <Insta
+        id={styles.insta}
+        className={styles.icon}
+        onClick={() => link(social.INSTA)}
+      />
+      <Tiktok
+        id={styles.tiktok}
+        className={styles.icon}
+        onClick={() => link(social.TIKTOK)}
+      />
     </div>
   );
 }

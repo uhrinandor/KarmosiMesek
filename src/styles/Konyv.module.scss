@@ -1,11 +1,11 @@
 .konyv {
-  aspect-ratio: 3 / 2.5;
+  aspect-ratio: 1.2 / 1;
   grid-template-rows: 1fr 8fr;
   grid-template-columns: 1fr 1fr;
 
   #konyvdesign {
     position: absolute;
-    height: 100%;
+    height: 85%;
     right: 0;
     top: 50%;
     transform: translateX(20%) translateY(-50%) rotate(10deg);

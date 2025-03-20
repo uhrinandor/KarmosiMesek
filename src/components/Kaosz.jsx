@@ -39,15 +39,15 @@ function Root({ onClick }) {
       <Block className={styles.content}>
         <BlockTitle>Végre itt vannak!</BlockTitle>
         <BreakText>Az utca rosszcsontjai új albummal debütáltak!</BreakText>
-        <CharText>
+        <BreakText>
           Hallgasd meg most <span>Gőzölgő Velőscsont</span> című albumukat!
-        </CharText>
+        </BreakText>
         <Button onClick={onClick} className={styles.play}>
           LEJÁTSZÁS
         </Button>
       </Block>
       <Block className={styles.image}>
-        <img src={file("kaoszkutyak.png")} alt="Káosz kutyák" />
+        <img src="http://karmosimesek.hu/assets/kaoszkutyak.png" />
       </Block>
     </>
   );
@@ -173,7 +173,7 @@ function Player() {
           },
         });
       }
-    }, 1000);
+    }, 950);
 
     return () => clearInterval(interval);
   }, [state.currentMusic]);
@@ -202,29 +202,29 @@ function Player() {
             className={styles["prev-button"]}
             onClick={() => handleSongChange(currentMusic - 1)}
           >
-            <PrevIcon className={styles.prev} />
+            <PrevIcon id={styles.prev} className={styles.prev} />
           </MusicButton>
           <MusicButton className={styles["pause-button"]} onClick={playPause}>
             {isPlaying ? (
-              <PauseIcon className={styles.play} />
+              <PauseIcon id={styles.pause} className={styles.play} />
             ) : (
-              <PlayIcon className={styles.play} />
+              <PlayIcon id={styles.play} className={styles.play} />
             )}
           </MusicButton>
           <MusicButton
             className={styles["next-button"]}
             onClick={() => handleSongChange(currentMusic + 1)}
           >
-            <NextIcon className={styles.next} />
+            <NextIcon id={styles.next} className={styles.next} />
           </MusicButton>
           <MusicButton
             className={styles["lyrics"]}
             onClick={() => dispatch({ type: "TOGGLE_LYRICS" })}
           >
             {state.showLyrics ? (
-              <ListIcon className={styles.list} />
+              <ListIcon id={styles.list} className={styles.list} />
             ) : (
-              <MicIcon className={styles.mic} />
+              <MicIcon id={styles.mic} className={styles.mic} />
             )}
           </MusicButton>
         </div>

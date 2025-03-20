@@ -11,8 +11,10 @@ export default function Section({
   style,
 }) {
   return (
-    <section id={id} style={style} className={`${styles.sec} ${className}`}>
-      <Title variant={variant}>{title}</Title>
+    <section style={style} className={`${styles.sec} ${className}`}>
+      <Title variant={variant} id={id}>
+        {title}
+      </Title>
       {children}
     </section>
   );
@@ -22,9 +24,9 @@ export function Block({ children, className }) {
   return <div className={`${styles.block} ${className}`}>{children}</div>;
 }
 
-function Title({ children, variant }) {
+function Title({ children, variant, id }) {
   return (
-    <div className={`${variant} ${styles.title}`}>
+    <div id={id} className={`${variant} ${styles.title}`}>
       {variant === "1" ? (
         <FoltUno className={styles.folt} />
       ) : (

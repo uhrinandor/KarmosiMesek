@@ -19,17 +19,17 @@ export default function Kapcsolat() {
       <Block className={styles.content}>
         <BlockTitle>Hol találsz meg minket?</BlockTitle>
         <Contact text="Karmosi Mesék" link={social.FACEBOOK}>
-          <Face />
+          <Face id={styles.face} />
         </Contact>
-        <Contact text="@karmosimesek">
-          <Insta />
+        <Contact text="@karmosimesek" link={social.INSTA}>
+          <Insta id={styles.insta} />
         </Contact>
-        <Contact text="@karmosimesek">
-          <Tiktok />
+        <Contact text="@karmosimesek" link={social.TIKTOK}>
+          <Tiktok id={styles.tiktok} />
         </Contact>
       </Block>
       <div className={styles.image}>
-        <img src={file("kapcsolat.png")} alt="" />
+        <img src={file("kapcsolat.png")} alt="Karmosi úr elérhetőség" />
       </div>
     </Section>
   );

@@ -1,28 +1,29 @@
 .block-title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: "Cartoon", sans-serif;
   color: var(--purple);
+  line-height: 105%;
 }
 
 .break-text {
   width: 80%;
   min-width: 120px;
-  font-size: 0.8rem;
-  margin-top: 2rem;
+  font-size: min(1.2rem, 2vw);
+  margin-top: max(1rem, 16px);
   font-family: "Roboto Condensed", sans-serif;
   line-height: 160%;
 }
 .char-text {
   width: 80%;
   min-width: 120px;
-  font-size: 0.8rem;
+  font-size: min(1.2rem, 1.9vw);
   margin-top: 1rem;
   font-family: "Roboto Condensed", sans-serif;
   line-height: 160%;
 }
 
 .quote {
-  font-size: 1.1rem;
+  font-size: min(1.2rem, 2.1vw);
   color: var(--purple);
   opacity: 70%;
   font-family: "Cartoon", sans-serif;

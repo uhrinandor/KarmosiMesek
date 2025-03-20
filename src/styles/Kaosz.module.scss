@@ -1,18 +1,17 @@
 .kaosz {
-  aspect-ratio: 2 / 1.4;
+  aspect-ratio: 1.2 / 1;
   grid-template-rows: 1fr 8fr;
-  column-gap: 2rem;
 
   .playlist {
     justify-content: flex-start;
     gap: 1rem;
     .title {
       margin-top: 10%;
-      margin-bottom: 5%;
+      padding-bottom: 5%;
     }
 
     .continue {
-      width: 70%;
+      width: min(15rem, 80%);
       margin: 0 auto;
       margin-top: auto;
       margin-bottom: 10%;
@@ -70,6 +69,7 @@
 
     p.title {
       margin-top: 10%;
+      margin-bottom: 5%;
       height: 8%;
       font-size: 1.6rem;
     }
@@ -96,6 +96,7 @@
     img {
       margin-top: auto;
       width: 110%;
+      transform: rotate(8deg);
     }
   }
 
@@ -122,36 +123,31 @@
       width: 90%;
       height: auto;
       min-height: 10px;
-      &::-webkit-slider-thumb {
-        background-color: var(--purple);
-        width: 0.7rem;
-        height: 0.7rem;
-        border: none;
-        -webkit-appearance: none; // Ensures consistent thumb styling
-      }
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
 
-      &::-webkit-slider {
-        -webkit-appearance: none; // Ensures consistent styling across WebKit browsers
-        width: 100%;
-        border: none;
-      }
-
-      &::-webkit-slider-track,
+      // WebKit (Chrome, Safari)
       &::-webkit-slider-runnable-track {
         background-color: var(--purple);
         opacity: 60%;
         height: 0.35rem;
         border-radius: 20px;
+        border: none;
       }
 
-      // Firefox (Mozilla)
-      &::-moz-range-thumb {
+      &::-webkit-slider-thumb {
         background-color: var(--purple);
         width: 0.7rem;
         height: 0.7rem;
         border: none;
+        border-radius: 50%;
+        -webkit-appearance: none;
+        appearance: none;
+        margin-top: -3px;
       }
 
+      // Firefox
       &::-moz-range-track {
         background-color: var(--purple);
         opacity: 60%;
@@ -159,26 +155,28 @@
         border-radius: 20px;
       }
 
-      &::-moz-range-progress {
+      &::-moz-range-thumb {
         background-color: var(--purple);
-        height: 0.35rem;
-        border-radius: 20px;
+        width: 0.7rem;
+        height: 0.7rem;
+        border: none;
+        border-radius: 50%;
       }
 
-      // Microsoft Edge and Internet Explorer
+      // Edge & IE
+      &::-ms-track {
+        background-color: transparent;
+        height: 0.35rem;
+        border-radius: 20px;
+        border: none;
+      }
+
       &::-ms-thumb {
         background-color: var(--purple);
         width: 0.7rem;
         height: 0.7rem;
         border: none;
-      }
-
-      &::-ms-track {
-        background-color: var(--purple);
-        opacity: 60%;
-        height: 0.35rem;
-        border-radius: 20px;
-        border: none;
+        border-radius: 50%;
       }
 
       &::-ms-fill-lower,
@@ -225,7 +223,13 @@
         &.lyrics {
           grid-column: 5 / 6;
         }
-        svg {
+        #next,
+        #prev,
+        #play,
+        #pause,
+        #mic,
+        #list,
+        #next {
           width: 100%;
           height: 100%;
           transition: transform 150ms ease-in;
