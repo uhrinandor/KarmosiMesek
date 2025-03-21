@@ -1,8 +1,9 @@
 .characters {
-  grid-template-rows: 1fr repeat(14, 4fr);
-  grid-template-columns: 4fr 4fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 1fr 1fr;
   column-gap: max(12px, 1rem);
   row-gap: max(12px, 1rem);
+  margin-bottom: 0.5rem;
 }
 
 .image-left,

@@ -21,18 +21,15 @@ const charImages = [
   file("karakterek/csiba.png"),
 ];
 
-export default function Characters() {
-  const arr = Array.from({ length: 14 }, (_, i) => i + 1);
+export function Characters() {
   return (
     <Section id="szereplok" title="SZEREPLŐK" className={styles.characters}>
-      {arr.map((i) => (
-        <Character key={i} i={i} />
-      ))}
+      <Character i={1} />
     </Section>
   );
 }
 
-function Character({ i }) {
+export function Character({ i }) {
   const isOdd = i % 2 === 1;
   const char = characters[i - 1];
   const image = (

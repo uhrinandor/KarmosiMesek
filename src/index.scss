@@ -50,12 +50,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
   overflow: hidden;
 }
 
 .welcome-text {
   font-size: 1.5rem;
+  margin: 2rem 0;
   font-family: "Cartoon";
   text-align: center;
   color: black;
