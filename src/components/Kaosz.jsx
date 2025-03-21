@@ -1,6 +1,6 @@
 import Section, { Block } from "./Section";
 import styles from "../styles/Kaosz.module.scss";
-import { BlockTitle, BreakText, CharText } from "./Text";
+import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 import { useState, useRef, useEffect, useReducer, useMemo } from "react";
 import { file } from "../utils/var";
@@ -47,7 +47,10 @@ function Root({ onClick }) {
         </Button>
       </Block>
       <Block className={styles.image}>
-        <img src="http://karmosimesek.hu/assets/kaoszkutyak.png" />
+        <img
+          src="http://karmosimesek.hu/assets/kaoszkutyak.png"
+          alt="Káosz Kutyák"
+        />
       </Block>
     </>
   );

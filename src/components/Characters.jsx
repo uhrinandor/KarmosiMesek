@@ -3,7 +3,6 @@ import styles from "../styles/Characters.module.scss";
 import { BlockTitle, CharText, QuoteText } from "./Text";
 import characters from "../utils/characters";
 import { file } from "../utils/var";
-import { useEffect, useRef, useState } from "react";
 
 const charImages = [
   file("karakterek/karmosi.png"),
