@@ -11,7 +11,8 @@ const characters = [
   },
   {
     nev: "Wilhelmina",
-    idezet: "Ez az izgága viselkedést biztosan nem tőlem örökölte ez a gyerek.",
+    idezet:
+      "Ezt az izgága viselkedést biztosan nem tőlem örökölte ez a gyerek.",
     bemutato: "Bajor macskakisasszony, Karmosi Úr felesége.",
     hol: {
       eleje: "Találkozhatsz vele a",
@@ -104,7 +105,7 @@ const characters = [
       "A balai puszta elsőszámú kosa, az aklok közti Szarvcsavar Kupa győztese, a birkák büszke népé­nek egyik vezetője.",
     hol: {
       eleje: "Találkozhatsz vele a",
-      mese: "„A vízközjárós kaland”",
+      mese: "„A csodálatos zsúrkenyér”",
       end: "című mesében.",
     },
   },
@@ -147,7 +148,7 @@ const characters = [
     bemutato: "Egy kedves sünlány, Karmosi Úr gyerekkori barátja.",
     hol: {
       eleje: "Találkozhatsz vele a",
-      mese: "„A vízközjárós kaland”",
+      mese: "„Karom, a csibész kismacska”",
       end: "című mesében.",
     },
   },

@@ -36,3 +36,11 @@ function Title({ children, variant, id }) {
     </div>
   );
 }
+
+export function SectionNoTitle({ children, className, style }) {
+  return (
+    <section style={style} className={`${styles["sec-no-title"]} ${className}`}>
+      {children}
+    </section>
+  );
+}

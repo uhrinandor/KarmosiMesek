@@ -24,9 +24,9 @@ export default function Rendeles() {
       <Block className={styles.content}>
         <BlockTitle>Készen állsz a kalandra?</BlockTitle>
         <BreakText>
-          A Karmosi Mesék könyv teljes pompájában, most elérhetővé vált mindenki
-          számára, weboldalunkon megvásárolhatod kedvezményes áron, különböző
-          csomagokban!
+          A Karmosi Mesék könyv teljes pompájában végre elérhetővé vált mindenki
+          számára! Kattints a rendelés gombra és válogass a kedvezményes
+          csomagok között!
         </BreakText>
         <Button onClick={toRendeles} className={styles.button}>
           RENDELÉS

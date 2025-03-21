@@ -7,7 +7,7 @@ import { Button } from "./Button";
 import { questMusic } from "../utils/music";
 
 const initState = {
-  showLyrics: false,  
+  showLyrics: false,
   currentSong: 0,
 };
 
@@ -45,9 +45,9 @@ export default function Quest() {
 
   return (
     <Section
-      title="FELADAT"
+      title="KALAND"
       variant="2"
-      id="feladat"
+      id="kaland"
       className={styles.quest}
       style={{
         "grid-template-columns": showLyrics ? "1fr 2fr" : "2fr 3fr",
@@ -97,9 +97,9 @@ export default function Quest() {
       ) : (
         <>
           <Block className={styles.content}>
-            <BlockTitle>Állj be a bandába!</BlockTitle>
+            <BlockTitle>Zenélj velünk cimbi!</BlockTitle>
             <BreakText>
-              A KáoszKutyáknak a te segítségedre van szüksége! Szerezzetek új
+              A KáoszKutyáknak a Te segítségedre van szüksége! Szerezzetek új
               dalokat a családdal!
             </BreakText>
             <BreakText>Készen állsz?</BreakText>
