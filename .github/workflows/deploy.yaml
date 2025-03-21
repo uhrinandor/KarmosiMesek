@@ -3,31 +3,38 @@ name: CPanel Deploy
 on:
   push:
     branches:
-      - release
+      - main
 
 jobs:
-  deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Checkout the repository
-      - name: Clean Up
-        run: rm -rf build/
-
       - name: Checkout
-        uses: actions/checkout@v3
-
-      # Step 2: Install dependencies and build the React app
-      - name: Install dependencies and build
-        run: |
-          npm install
-          CI=true npm run build
-      # Step 3: Deploy the build folder to cPanel via FTP
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: actions/checkout@main
+      - name: Install deps
+        run: npm ci
+      - name: Build deps
+        run: npm run build
+      - name: Production artifact
+        uses: actions/upload-artifact@main
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
+          name: build
+          path: build
+  deploy:
+    name: Deploy
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Download artifact
+        uses: actions/download-artifact@main
+        with:
+          name: dist
+          path: dist
+      - name: Sync
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ftp.karmosimesek.hu
+          username: deploy@karmosimesek.hu
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/ # Path to your React app build directory
-          server-dir: /public_html/
