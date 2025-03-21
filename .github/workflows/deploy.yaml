@@ -3,7 +3,7 @@ name: CPanel Deploy
 on:
   push:
     branches:
-      - main # Deploy when changes are merged into the main branch
+      - release
 
 jobs:
   deploy:
