@@ -20,7 +20,7 @@ export default function Konyv() {
         </BreakText>
         <BreakText>
           Megismerheted a KáoszKutyák zenekar megalakulásának igaz történetét,
-          valamint meghallgathatod a Gőzölgő Velőscsont című albumukat!
+          valamint meghallgathatod a Gőzölgő Velőscsont című album két dalát!
         </BreakText>
       </Block>
       <Block>
