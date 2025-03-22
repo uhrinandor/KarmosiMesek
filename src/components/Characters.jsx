@@ -1,7 +1,6 @@
 import Section, { Block } from "./Section";
 import styles from "../styles/Characters.module.scss";
 import { BlockTitle, CharText, QuoteText } from "./Text";
-import characters from "../utils/characters";
 import { file } from "../utils/var";
 
 const charImages = [
@@ -21,44 +20,43 @@ const charImages = [
   file("karakterek/csiba.png"),
 ];
 
-export function Characters() {
+export function Characters({ karmosi }) {
   return (
     <Section id="szereplok" title="SZEREPLŐK" className={styles.characters}>
-      <Character i={1} />
+      <Character i={0} data={karmosi} />
     </Section>
   );
 }
 
-export function Character({ i }) {
+export function Character({ data, i }) {
   const isOdd = i % 2 === 1;
-  const char = characters[i - 1];
   const image = (
     <Block
       key={i}
       className={isOdd ? styles["image-left"] : styles["image-right"]}
     >
-      <img src={charImages[i - 1]} alt="Karmosi úr" />
+      <img src={charImages[i]} alt="Karmosi úr" />
     </Block>
   );
 
   const content = (
     <Block
       className={isOdd ? styles["content-right"] : styles["content-left"]}
-      key={char.nev}
+      key={data.nev}
     >
       <BlockTitle
         className={
-          char.nev === "Kukac, Vattacukor, Zserbó" ? styles.kukac : undefined
+          data.nev === "Kukac, Vattacukor, Zserbó" ? styles.kukac : undefined
         }
       >
-        {char.nev}
+        {data.nev}
       </BlockTitle>
-      <QuoteText>{char.idezet}</QuoteText>
-      <CharText>{char.bemutato}</CharText>
+      <QuoteText>{data.idezet}</QuoteText>
+      <CharText>{data.bemutato}</CharText>
       <CharText>
-        {char.hol.eleje}
-        <span className={styles["mese"]}> {char.hol.mese} </span>
-        {char.hol.end}
+        {data.hol.eleje}
+        <span className={styles["mese"]}> {data.hol.mese} </span>
+        {data.hol.end}
       </CharText>
     </Block>
   );

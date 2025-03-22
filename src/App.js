@@ -9,38 +9,42 @@ import Quest from "./components/Quest";
 import Rendeles from "./components/Rendeles";
 import { SectionNoTitle } from "./components/Section";
 import styles from "./App.module.scss";
+import { DataContext } from "./components/DataContext";
+import { useContext } from "react";
+import Error from "./components/Error";
 
 function App() {
+  const data = useContext(DataContext);
+
   const charArr = Array.from({ length: 13 }, (_, i) => i + 1);
 
-  return (
+  return data ? (
     <div className="app">
-      <Header />
-      <p className="welcome-text">
-        Örülök, hogy itt vagy! Köszöntelek a Karmosi mesék világában! Itt minden
-        nap egy új kaland vár rád, ahol Karmosi Úr, a csibész kis macska lesz a
-        vezetőd!
-      </p>
-      <Konyv />
-      <Characters />
+      <Header data={data.fejlec} />
+      <p className="welcome-text">{data.koszonto}</p>
+      <Konyv data={data.konyv} />
+      <Characters karmosi={data.szereplok.lista[0]} />
       {charArr.map((i) => {
         return (
           <SectionNoTitle
+            key={i}
             className={
               i === charArr.length ? styles["last-character"] : undefined
             }
           >
-            <Character i={i + 1} />
+            <Character data={data.szereplok.lista[i]} i={i} />
           </SectionNoTitle>
         );
       })}
-      <Kaosz />
-      <Quest />
-      <Rendeles />
-      <Kapcsolat />
-      <Back />
-      <Bottom />
+      <Kaosz data={data.kaoszkutyak} />
+      <Quest data={data.kaland} />
+      <Rendeles data={data.rendeles} />
+      <Kapcsolat data={data.kapcsolat} />
+      <Back data={data.vissza} />
+      <Bottom data={data.kapcsolat} />
     </div>
+  ) : (
+    <Error />
   );
 }
 

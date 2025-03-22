@@ -4,13 +4,16 @@ import "./index.scss";
 import App from "./App";
 import { BrowserRouter } from "react-router";
 import { Route, Routes } from "react-router";
+import { DataProvider } from "./components/DataContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-    </Routes>
+    <DataProvider>
+      <Routes>
+        <Route path="/" element={<App />} />
+      </Routes>
+    </DataProvider>
   </BrowserRouter>
 );
 

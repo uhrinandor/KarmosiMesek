@@ -33,7 +33,7 @@ const reducer = (state, action) => {
   }
 };
 
-export default function Quest() {
+export default function Quest({ data }) {
   const [state, dispatch] = useReducer(reducer, initState);
   const { showLyrics, currentSong } = state;
   const song = useMemo(() => questMusic[currentSong], [currentSong]);
@@ -45,19 +45,19 @@ export default function Quest() {
 
   return (
     <Section
-      title="KALAND"
+      title={data.cim}
       variant="2"
       id="kaland"
       className={styles.quest}
       style={{
-        "grid-template-columns": showLyrics ? "1fr 2fr" : "2fr 3fr",
+        gridTemplateColumns: showLyrics ? "1fr 2fr" : "2fr 3fr",
       }}
     >
       {showLyrics ? (
         <>
           <Block className={styles["music-list"]}>
             <BlockTitle className={styles["lyrics-title"]}>
-              Gőzölgő Velőscsont
+              {data.dalszovegek.blokkcim}
             </BlockTitle>
             <div className={styles["song-list-content"]}>
               {questMusic.map((s, i) => (
@@ -97,17 +97,15 @@ export default function Quest() {
       ) : (
         <>
           <Block className={styles.content}>
-            <BlockTitle>Zenélj velünk cimbi!</BlockTitle>
-            <BreakText>
-              A KáoszKutyáknak a Te segítségedre van szüksége! Szerezzetek új
-              dalokat a családdal!
-            </BreakText>
-            <BreakText>Készen állsz?</BreakText>
+            <BlockTitle>{data.bemutato.blokkcim}</BlockTitle>
+            {data.bemutato.szovegek.map((szoveg, i) => (
+              <BreakText key={i}>{szoveg}</BreakText>
+            ))}
             <Button
               onClick={() => dispatch({ type: "SHOW_LYRICS" })}
               className={styles.button}
             >
-              DALSZÖVEGEK
+              {data.bemutato.gombCim}
             </Button>
           </Block>
           <Block className={styles.image}>

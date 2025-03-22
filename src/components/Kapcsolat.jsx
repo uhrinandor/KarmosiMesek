@@ -6,9 +6,9 @@ import { BlockTitle } from "./Text";
 import { ReactComponent as Face } from "../assets/bottom/FacebookIcon.svg";
 import { ReactComponent as Insta } from "../assets/bottom/InstaIcon.svg";
 import { ReactComponent as Tiktok } from "../assets/bottom/TikTokIcon.svg";
-import { file, social } from "../utils/var";
+import { file } from "../utils/var";
 
-export default function Kapcsolat() {
+export default function Kapcsolat({ data }) {
   return (
     <Section
       title="KAPCSOLAT"
@@ -17,14 +17,14 @@ export default function Kapcsolat() {
       variant="2"
     >
       <Block className={styles.content}>
-        <BlockTitle>Hol találsz meg minket?</BlockTitle>
-        <Contact text="Karmosi Mesék" link={social.FACEBOOK}>
+        <BlockTitle>{data.blokkcim}</BlockTitle>
+        <Contact text={data.facebook.szoveg} link={data.facebook.link}>
           <Face id={styles.face} />
         </Contact>
-        <Contact text="@karmosimesek" link={social.INSTA}>
+        <Contact text={data.instagram.szoveg} link={data.instagram.link}>
           <Insta id={styles.insta} />
         </Contact>
-        <Contact text="@karmosimesek" link={social.TIKTOK}>
+        <Contact text={data.tiktok.szoveg} link={data.tiktok.link}>
           <Tiktok id={styles.tiktok} />
         </Contact>
       </Block>

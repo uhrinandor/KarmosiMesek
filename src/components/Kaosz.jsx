@@ -14,36 +14,42 @@ import { ReactComponent as PrevIcon } from "../assets/components/Back.svg";
 import { ReactComponent as MicIcon } from "../assets/components/Mic.svg";
 import { ReactComponent as ListIcon } from "../assets/components/List.svg";
 
-export default function Kaosz() {
+export default function Kaosz({ data }) {
   const [toPlay, setPlay] = useState(false);
   const onClick = () => setPlay(true);
 
   return (
     <Section
       id="kaoszkutyak"
-      title="KÁOSZ KUTYÁK"
+      title={data.cim}
       variant="1"
       className={styles.kaosz}
       style={{
-        "grid-template-columns": toPlay ? "5fr 3fr" : "1fr 1fr",
+        gridTemplateColumns: toPlay ? "5fr 3fr" : "1fr 1fr",
       }}
     >
-      {toPlay ? <Player /> : <Root onClick={onClick} />}
+      {toPlay ? (
+        <Player data={data.lejatszo} />
+      ) : (
+        <Root data={data.bemutato} onClick={onClick} />
+      )}
     </Section>
   );
 }
 
-function Root({ onClick }) {
+function Root({ onClick, data }) {
   return (
     <>
       <Block className={styles.content}>
-        <BlockTitle>Végre itt vannak!</BlockTitle>
-        <BreakText>Az utca rosszcsontjai új albummal debütáltak!</BreakText>
+        <BlockTitle>{data.blokkcim}</BlockTitle>
+        {data.szovegek.map((szoveg, i) => (
+          <BreakText key={i}>{szoveg}</BreakText>
+        ))}
         <BreakText>
-          Hallgass bele most <span>a Gőzölgő Velőscsont</span> című albumukba.
+          Hallgass bele most a <span>Gőzölgő Velőscsont</span> című albumukba.
         </BreakText>
         <Button onClick={onClick} className={styles.play}>
-          LEJÁTSZÁS
+          {data.gombCim}
         </Button>
       </Block>
       <Block className={styles.image}>
@@ -109,7 +115,7 @@ const musicReducer = (state, action) => {
   }
 };
 
-function Player() {
+function Player({ data }) {
   const nav = useNavigate();
 
   const onTovabbiak = () => {
@@ -245,7 +251,7 @@ function Player() {
         </Block>
       ) : (
         <Block className={styles["playlist"]}>
-          <BlockTitle className={styles.title}>Gőzölgő Velőscsont</BlockTitle>
+          <BlockTitle className={styles.title}>{data.blokkcim}</BlockTitle>
           {music.map((s, i) => (
             <div
               onClick={() => handleSongChange(i)}
