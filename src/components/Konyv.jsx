@@ -3,25 +3,14 @@ import { BlockTitle, BreakText } from "./Text";
 import styles from "../styles/Konyv.module.scss";
 import { file } from "../utils/var";
 
-export default function Konyv() {
+export default function Konyv({ data }) {
   return (
-    <Section id="akonyv" title="A KÖNYV" variant="1" className={styles.konyv}>
+    <Section id="akonyv" title={data.cim} variant="1" className={styles.konyv}>
       <Block className={styles.content}>
-        <BlockTitle>Mit találsz a könyvben?</BlockTitle>
-        <BreakText>
-          Izgalmas, humoros és tanulságos történeteket, amelyek a
-          kíváncsiságról, bátorságról és barátságról szólnak. A történetek
-          főhőse egy kíváncsi kis macsek, aki ebbe a könyvbe kaparta be
-          élettörténetét, valamint saját meséit.
-        </BreakText>
-        <BreakText>
-          Lenyűgöző színes illusztrációkat, amelyek részletgazdagságukkal
-          elvarázsolnak, és elrepítenek fantázia csodálatos világába.
-        </BreakText>
-        <BreakText>
-          Megismerheted a KáoszKutyák zenekar megalakulásának igaz történetét,
-          valamint meghallgathatod a Gőzölgő Velőscsont című album két dalát!
-        </BreakText>
+        <BlockTitle>{data.blokkcim}</BlockTitle>
+        {data.szovegek.map((szoveg, i) => (
+          <BreakText key={i}>{szoveg}</BreakText>
+        ))}
       </Block>
       <Block>
         <img

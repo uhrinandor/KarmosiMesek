@@ -9,7 +9,7 @@ import { ReactComponent as Contact } from "../assets/header/KapcsolatIcon.svg";
 import { useNavigate } from "react-router";
 import { file } from "../utils/var";
 
-export default function Header() {
+export default function Header({ data }) {
   return (
     <header className={styles.header} id="header">
       <div className={styles.content}>
@@ -21,7 +21,7 @@ export default function Header() {
         />
       </div>
       <div className={styles.navbar}>
-        <MenuItem title="KEZDŐLAP" to="">
+        <MenuItem title={data.kezdolap} to="">
           <Home className={`${styles.icon} ${styles.home}`} />
         </MenuItem>
         <MenuItem title="SZEREPLŐK" to="szereplok">

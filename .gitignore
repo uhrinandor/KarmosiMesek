@@ -6,6 +6,9 @@
 .pnp.js
 .secrets
 
+# test
+data.json
+
 # testing
 /coverage
 

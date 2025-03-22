@@ -4,32 +4,28 @@ import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 import { file } from "../utils/var";
 
-const RENDELES_LINK = "http://karmosimesek.hu";
-
-export default function Rendeles() {
+export default function Rendeles({ data }) {
   const toRendeles = () => {
-    window.location.href = RENDELES_LINK;
+    window.location.href = data.rendelesLink;
   };
 
   return (
     <Section
       className={styles.rendeles}
       id="rendeles"
-      title="RENDELÉS"
+      title={data.cim}
       variant="1"
     >
       <Block className={styles.image}>
         <img src={file("rendeles.png")} alt="Rendelés" />
       </Block>
       <Block className={styles.content}>
-        <BlockTitle>Készen állsz a kalandra?</BlockTitle>
-        <BreakText>
-          A Karmosi Mesék könyv teljes pompájában végre elérhetővé vált mindenki
-          számára! Kattints a rendelés gombra és válogass a kedvezményes
-          csomagok között!
-        </BreakText>
+        <BlockTitle>{data.blokkcim}</BlockTitle>
+        {data.szovegek.map((szoveg, i) => (
+          <BreakText key={i}>{szoveg}</BreakText>
+        ))}
         <Button onClick={toRendeles} className={styles.button}>
-          RENDELÉS
+          {data.gombCim}
         </Button>
       </Block>
     </Section>
