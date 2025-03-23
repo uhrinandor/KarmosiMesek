@@ -32,8 +32,6 @@ curl -T $ZIP_NAME --user "$CPANEL_USER:$CPANEL_PASSWORD" ftp://$CPANEL_HOST/$ZIP
 echo "📂 Unzipping the build on cPanel..."
 ssh $CPANEL_USER@$CPANEL_HOST <<EOF
   cd $REMOTE_PATH
-  # Remove old build files (optional, comment if not needed)
-  rm -rf * 
   # Unzip the new build
   unzip -o $ZIP_NAME
   # Cleanup: remove the ZIP file after extraction
