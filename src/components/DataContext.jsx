@@ -1,11 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-import { URL } from "../utils/var";
 
 export const DataContext = createContext();
 
 export function DataProvider({ children }) {
   const [data, setData] = useState(null);
-  const url = `${URL}/data.json`; // "/data.json"
+  const url = "/data.json";
 
   useEffect(() => {
     fetch(url)

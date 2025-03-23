@@ -1,0 +1,258 @@
+{
+    "leiras": [
+        "Itt fogod tudni szerkeszteni a dolgokat, ha esetleg valami szintaktikai hibát hagynál az oldal egy hibaoldalra fog küldeni,",
+        "ezt mindig ellenőrizd le, ilyen hibák lehetnek pl: vessző valamelyik blokk végén hagyva, nincs lezáró karakter a szövegbe",
+        "Fontos, hogy az id nem fog változni, ahova irányít, ha változtatsz egy cimet, pl: Ha a 'Kaland' szekciót megváltoztatod kihívásra, attól még #kaland szekcióhoz fog dobni,",
+        "ami nyilván ugyanoda fog dobni, csak az id nem változik"
+    ],
+    "fejlec": {
+        "leiras": "Itt tudod változtatni a fejléc navigációs gombjainak szövegeit",
+        "kezdolap": "kezdőlap",
+        "szereplok": "szereplők",
+        "kaoszkutyak": "káosz kutyák",
+        "rendeles": "rendelés",
+        "kapcsolat": "kapcsolat"
+    },
+    "koszonto": "Örülök, hogy itt vagy! Köszöntelek a Karmosi mesék világában! Itt minden nap egy új kaland vár rád, ahol Karmosi Úr, a csibész kis macska lesz a vezetőd!",
+    "konyv": {
+        "cim": "a könyv",
+        "leiras": "Itt tudod a könyv block szövegeit megváltoztatni, hozzá tudsz adni új blokkot(elcsúszhat az oldal, mindig ellenőrizd vissza)",
+        "blokkcim": "Mit találsz a könyvben?",
+        "szovegek": [
+            "Izgalmas, humoros és tanulságos történeteket, amelyek a kíváncsiságról, bátorságról és barátságról szólnak. A történetek főhőse egy kíváncsi kis macsek, aki ebbe a könyvbe kaparta be élettörténetét, valamint saját meséit.",
+            "Lenyűgöző színes illusztrációkat, amelyek részletgazdagságukkal elvarázsolnak, és elrepítenek fantázia csodálatos világába.",
+            "Megismerheted a KáoszKutyák zenekar megalakulásának igaz történetét, valamint meghallgathatod a Gőzölgő Velőscsont című album két dalát!"
+        ]
+    },
+    "szereplok": {
+        "cim": "szereplők",
+        "leiras": "Itt tudod a karakterek szövegeit szerkeszteni, fontos, hogy ezt a szerkezetet meghagyd, mert így tudja majd kiszínezni pontosan a mesét, ami előtte van az 'elotte' kulcsba rakd, ami utána, azt az 'utana' kulcsba, a karakter képek sorrendbe vannak rakva a kódban, ezen se változtass, mert el fog csúszni",
+        "lista": [
+            {
+                "nev": "Karmosi úr",
+                "idezet": "Karmosi vagyok, alásszolgája miaáú!",
+                "bemutato": "Fiatalon a falusi porta csibésze, majd híres feltaláló.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„Karmosi Úr, a feltaláló”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Wilhelmina",
+                "idezet": "Ezt az izgága viselkedést biztosan nem tőlem örökölte ez a gyerek.",
+                "bemutato": "Bajor macskakisasszony, Karmosi Úr felesége.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„A lakodalom és az új otthon”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Kukac, Vattacukor, Zserbó",
+                "idezet": "Miau, miau hejj, hol van már az esti fincsi tej?",
+                "bemutato": "Karmosi úr és Wilhelmina gyerekei a Macskamancs Ranch ifjú lakói.",
+                "hol": {
+                    "eleje": "Találkozhatsz velük a",
+                    "mese": "„Gyermekáldás”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Lapidus",
+                "idezet": "Fölteszem ide ezt a jó kis hálót, biztos fogok vele egy finom ínycsiklandó bogárkát.",
+                "bemutato": "Hat lábbal született kedves kis pók, nektárt eszik.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„Lapidus, a kis pók barátra talál”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Monopator",
+                "idezet": "Monopator Generális támadásba lendül, Geronimóóóó!",
+                "bemutato": "Egyszemű bátor kis bogár, Lapidus barátja.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„Otthonteremtés és Monopator Generális”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Félelmetes Pacal Kapitány",
+                "idezet": "Borzalom, füstölt sóval hintette meg a salátát az a konyhai barbár!",
+                "bemutato": "Kényszerűségből kalóznak állt tengeri csillag, a szakács szakma igazi mestere.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„A vad tengeri szakácsbanda”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "KáoszSzofi",
+                "idezet": "Ellopták a velőscsontom hó hóhahó, vonyított nagy búsan a kanapélábú kopó!",
+                "bemutato": "A KáoszKutyák zenekar basszusgitárosa és vonyítója.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„KáoszKutyák, a zenekar”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Zöldi",
+                "idezet": "Ezt nézd Ubellinea mit találtam, egy vízközjáró szerkezet tervrajzát!",
+                "bemutato": "A Sekély-tenger egyetlen tengeri uborkája, ezermester, felfedező.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„A vízközjárós kaland”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Paszomány Sámuel",
+                "idezet": "Te jó ég, az ott egy késfarkú palavárd!",
+                "bemutato": "A Sekély-tengeri Nagy Kagylótár vezetője, egy idős szemüveges polip.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„Zöldi, a kis tengeri uborka”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Tuk Dezső",
+                "idezet": "Kotródj innen nádi farkas, vagy megtáncoltatlak a szarvamon!",
+                "bemutato": "A balai puszta elsőszámú kosa, az aklok közti Szarvcsavar Kupa győztese, a birkák büszke népé­nek egyik vezetője.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„A csodálatos zsúrkenyér”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Étcsokirály és Tejcsokirály",
+                "idezet": "Egészségetekre kedves alattvalóink, rátok ürítjük a szertartásbögréket!",
+                "bemutato": "A Csokoplanétán elterülő csokirályságok uralkodói.",
+                "hol": {
+                    "eleje": "Találkozhatsz velük a",
+                    "mese": "„A Nagy Csokoládé Csetepaté”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Hotdog",
+                "idezet": "Induljunk Dezső, lessük meg azt az űrhajót!",
+                "bemutato": "Egy hotdogtestű, kanapélábú, egyenes, felfelé álló antennafarkú tacskó.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„A csodálatos zsúrkenyér”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Brigec és Purcel",
+                "idezet": "Ajajj, már megint tiszta csillagpor a fluxuskondenzátor!",
+                "bemutato": "Az Űrmézőrzők közé tartozó két űrlény.",
+                "hol": {
+                    "eleje": "Találkozhatsz velük a",
+                    "mese": "„A csodálatos zsúrkenyér”",
+                    "end": "című mesében."
+                }
+            },
+            {
+                "nev": "Csibapaprika",
+                "idezet": "Ne csüggedj barátom! Bedobunk néhány falatot, teli hassal jobban megy a gondolkodás.",
+                "bemutato": "Egy kedves sünlány, Karmosi Úr gyerekkori barátja.",
+                "hol": {
+                    "eleje": "Találkozhatsz vele a",
+                    "mese": "„Karom, a csibész kismacska”",
+                    "end": "című mesében."
+                }
+            }
+        ]
+    },
+    "kaoszkutyak": {
+        "cim": "káosz kutyák",
+        "leiras": "Itt tudod szerkeszteni a Káosz Kutyák blokkot, fontos, hogy az albumblokknál megmaradjanak a kulcsok, így tudja kiemelni lilával az albumot",
+        "bemutato": {
+            "leiras": "Itt van a bemutató szöveg",
+            "blokkcim": "Végre itt vannak",
+            "szovegek": [
+                "Az utca rosszcsontjai új albummal debütáltak!"
+            ],
+            "albumblokk": {
+                "start": "Hallgass bele most a",
+                "album": "Gőzölgő Velőscsont",
+                "end": "című albumukba."
+            },
+            "gombCim": "lejátszás"
+        },
+        "lejatszo": {
+            "blokkcim": "Gőzölgő Velőscsont"
+        }
+    },
+    "kaland": {
+        "cim": "kaland",
+        "leiras": "Itt tudod a kaland szekciót szerkeszteni",
+        "bemutato": {
+            "blokkcim": "Zenélj velünk cimbi!",
+            "szovegek": [
+                "A KáoszKutyáknak a Te segítségedre van szüksége! Szerezzetek új dalokat a családdal!",
+                "Készen állsz?"
+            ],
+            "level": {
+                "szoveg1": "Beindultunk! A Gőzölgő Velőscsont című album dalszövegei el is készültek. Két számhoz már zenét is szereztünk. Füleljetek csak bele! Szövegírás közben elfogyott több doboz kutyakeksz, lecsúszott pár pohár buborékos málnaszörp, néha majdnem egymás farkába haraptunk. Bizony el is fáradtunk ebben a nagy munkában! Kérlek segítsetek nekünk! Itt találjátok az elkészült dalszövegeket. Kérlek szerezzetek zenét hozzájuk, játszatok hangszeren, énekeljétek el, használjatok mesterséges intelligenciát, nincs megkötés!",
+                "szoveg2": {
+                    "blokk1": "Ha elkészült, töltsétek fel a ",
+                    "kiemel1": "Karmosi Úr Facebook",
+                    "blokk2": " oldalra , és lássátok el ",
+                    "kiemel2": "#karmosiur",
+                    "blokk3": " jelöléssel, vagy töltsétek fel ",
+                    "kiemel3": "TikTok",
+                    "blokk4": "-ra. Velünk zenélsz, ezért tiszteletbeli bandataggá váltál! Facebook üzenetben a szüleid írják meg a postai címed, küldünk egy szuper KáoszKutyás kitűzőt. Viseld majd büszkén!"
+                },
+                "zaro": "Toljuk együtt, zenére fel! Vaúúúúúú!",
+                "alairas": {
+                    "1": "KáoszSzofi, KáoszKefír, KáoszKeksz,",
+                    "2": {
+                        "elso": "azaz a ",
+                        "kiemel": "KáoszKutyák!"
+                    }
+                }
+            },
+            "gombCim": "dalszövegek"
+        },
+        "dalszovegek": {
+            "blokkcim": "Gőzölgő Velőscsont"
+        }
+    },
+    "rendeles": {
+        "cim": "rendelés",
+        "leiras": "Itt tudod szerkeszteni a Rendelés szekciót, itt hozzá tudod adni majd a rendelés linkjét is",
+        "blokkcim": "Készen állsz a kalandra?",
+        "szovegek": [
+            "A Karmosi Mesék könyv teljes pompájában végre elérhetővé vált mindenki számára! Kattints a rendelés gombra és válogass a kedvezményes csomagok között!"
+        ],
+        "gombCim": "rendelés",
+        "rendelesLink": "http://karmosimesek.hu"
+    },
+    "kapcsolat": {
+        "cim": "kapcsolat",
+        "leiras": "Itt tudod megadni a Kapcsolat szekció szövegeit és linkjeit",
+        "blokkcim": "Hol találsz meg minket?",
+        "facebook": {
+            "szoveg": "Karmosi Mesék",
+            "link": "https://www.facebook.com/profile.php?id=61574115003931"
+        },
+        "instagram": {
+            "szoveg": "@karmosimesek",
+            "link": "https://www.instagram.com/karmosiur"
+        },
+        "tiktok": {
+            "szoveg": "@karmosimesek",
+            "link": "https://www.tiktok.com/@karmosiur"
+        }
+    },
+    "vissza": {
+        "gombCim": "vissza az elejére"
+    }
+}
