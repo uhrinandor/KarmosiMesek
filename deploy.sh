@@ -24,9 +24,9 @@ echo "> Zipping build folder..."
 rm -f $ZIP_NAME
 zip -r $ZIP_NAME $BUILD_DIR
 
-# 3️⃣ Upload ZIP to cPanel via FTP
+# 3️⃣ Upload ZIP to cPanel via FTP using ncftpput
 echo "> Uploading build to cPanel..."
-curl -T $ZIP_NAME --user "$CPANEL_USER:$CPANEL_PASSWORD" ftp://$CPANEL_HOST/$ZIP_NAME || { echo ">> FTP Upload failed!"; exit 1; }
+ncftpput -u "$CPANEL_USER" -p "$CPANEL_PASSWORD" "$CPANEL_HOST" "$REMOTE_PATH" "$ZIP_NAME" || { echo ">> FTP Upload failed!"; exit 1; }
 
 # 4️⃣ SSH into cPanel and extract ZIP inside public_html
 echo "📂 Unzipping the build on cPanel..."
@@ -36,6 +36,7 @@ ssh $CPANEL_USER@$CPANEL_HOST <<EOF
   unzip -o $ZIP_NAME
   # Cleanup: remove the ZIP file after extraction
   rm -f $ZIP_NAME
+  mv mv build/* build/.* ./
 EOF
 
 echo "> Deployment Successful!"
