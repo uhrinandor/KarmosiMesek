@@ -5,6 +5,7 @@ import { file } from "../utils/var";
 import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 import { questMusic } from "../utils/music";
+import { ReactComponent as Mancs } from "../assets/components/Mancs.svg";
 
 const initState = {
   showLyrics: false,
@@ -38,6 +39,7 @@ export default function Quest({ data }) {
   const { showLyrics, currentSong } = state;
   const song = useMemo(() => questMusic[currentSong], [currentSong]);
   const lyricsBlockRef = useRef(null);
+  const level = data.bemutato.level;
 
   useEffect(() => {
     if (lyricsBlockRef.current) lyricsBlockRef.current.scrollTop = 0;
@@ -109,7 +111,32 @@ export default function Quest({ data }) {
             </Button>
           </Block>
           <Block className={styles.image}>
-            <img src={file("kapcsolat.png")} alt="SideQuest" />
+            <div className={styles.letter}>
+              <img src={file("level.png")} alt="Káosz Kutyák levél" />
+              <div className={styles["letter-content"]}>
+                <p className={styles.title}>Kedves Rajongóink!</p>
+                <span>{level.szoveg1}</span>
+                <span className={styles.kiemel}>
+                  {level.szoveg2.blokk1}
+                  <p>{level.szoveg2.kiemel1}</p>
+                  {level.szoveg2.blokk2}
+                  <p>{level.szoveg2.kiemel2}</p>
+                  {level.szoveg2.blokk3}
+                  <p>{level.szoveg2.kiemel3}</p>
+                  {level.szoveg2.blokk4}
+                </span>
+                <span className={styles.ui}>{level.zaro}</span>
+                <span className={styles.banda}>
+                  {level.alairas["1"]}
+                  <br />
+                  {level.alairas["2"].elso}
+                  <p>{level.alairas["2"].kiemel}</p>
+                </span>
+                <Mancs className={styles.mancs} id={styles["mancs1"]} />
+                <Mancs className={styles.mancs} id={styles["mancs2"]} />
+                <Mancs className={styles.mancs} id={styles["mancs3"]} />
+              </div>
+            </div>
           </Block>
         </>
       )}

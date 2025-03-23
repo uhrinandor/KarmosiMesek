@@ -28,11 +28,12 @@ export function Characters({ karmosi }) {
   );
 }
 
-export function Character({ data, i }) {
+export function Character({ data, i, style }) {
   const isOdd = i % 2 === 1;
   const image = (
     <Block
       key={i}
+      style={style}
       className={isOdd ? styles["image-left"] : styles["image-right"]}
     >
       <img src={charImages[i]} alt="Karmosi úr" />

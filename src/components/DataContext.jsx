@@ -5,12 +5,17 @@ export const DataContext = createContext();
 
 export function DataProvider({ children }) {
   const [data, setData] = useState(null);
-  const url = `${URL}/data.json`;
+  const url = `${URL}/data.json`; // "/data.json"
 
   useEffect(() => {
     fetch(url)
       .then((r) => r.json())
+      .then((j) => {
+        console.log(j);
+        return j;
+      })
       .then((json) => setData(json))
+
       .catch((e) => {
         setData(null);
       });
