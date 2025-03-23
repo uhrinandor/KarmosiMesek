@@ -32,11 +32,14 @@ ncftpput -u "$CPANEL_USER" -p "$CPANEL_PASSWORD" "$CPANEL_HOST" "$REMOTE_PATH" "
 echo "📂 Unzipping the build on cPanel..."
 ssh $CPANEL_USER@$CPANEL_HOST <<EOF
   cd $REMOTE_PATH
+  #Cleanup files
+  rm -r static apple-touch-icon.png asset-manifest.json favicon.png favicon.svg index.html manifest.json robots.txt
   # Unzip the new build
   unzip -o $ZIP_NAME
   # Cleanup: remove the ZIP file after extraction
   rm -f $ZIP_NAME
   mv mv build/* build/.* ./
+  rm -r build
 EOF
 
 echo "> Deployment Successful!"
