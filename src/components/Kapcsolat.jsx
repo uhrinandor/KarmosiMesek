@@ -6,13 +6,13 @@ import { BlockTitle } from "./Text";
 import { ReactComponent as Face } from "../assets/bottom/FacebookIcon.svg";
 import { ReactComponent as Insta } from "../assets/bottom/InstaIcon.svg";
 import { ReactComponent as Tiktok } from "../assets/bottom/TikTokIcon.svg";
-import { file } from "../utils/var";
+import { file, sectionLinks } from "../utils/var";
 
 export default function Kapcsolat({ data }) {
   return (
     <Section
       title="KAPCSOLAT"
-      id="kapcsolat"
+      id={sectionLinks.KAPCSOLAT}
       className={styles.kapcsolat}
       variant="2"
     >

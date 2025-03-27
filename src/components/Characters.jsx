@@ -1,7 +1,7 @@
 import Section, { Block } from "./Section";
 import styles from "../styles/Characters.module.scss";
 import { BlockTitle, CharText, QuoteText } from "./Text";
-import { file } from "../utils/var";
+import { file, sectionLinks } from "../utils/var";
 
 const charImages = [
   file("karakterek/karmosi.png"),
@@ -22,7 +22,11 @@ const charImages = [
 
 export function Characters({ karmosi }) {
   return (
-    <Section id="szereplok" title="SZEREPLŐK" className={styles.characters}>
+    <Section
+      id={sectionLinks.SZEREPLOK}
+      title="SZEREPLŐK"
+      className={styles.characters}
+    >
       <Character i={0} data={karmosi} />
     </Section>
   );

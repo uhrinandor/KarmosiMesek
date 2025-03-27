@@ -67,6 +67,11 @@
             p {
               display: inline-block;
               color: var(--purple);
+
+              &.link {
+                cursor: pointer;
+                text-decoration: underline;
+              }
             }
           }
 
