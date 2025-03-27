@@ -63,7 +63,7 @@ function App() {
         );
       })}
       <Kaosz data={data.kaoszkutyak} />
-      <Quest data={data.kaland} />
+      <Quest data={{ ...data.kaland, kapcsolat: data.kapcsolat }} />
       <Rendeles data={data.rendeles} />
       <Kapcsolat data={data.kapcsolat} />
       <Back data={data.vissza} />
