@@ -3,7 +3,7 @@ import styles from "../styles/Kaosz.module.scss";
 import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 import { useState, useRef, useEffect, useReducer, useMemo } from "react";
-import { file } from "../utils/var";
+import { file, sectionLinks } from "../utils/var";
 import { useNavigate } from "react-router";
 import music from "../utils/music";
 
@@ -116,7 +116,7 @@ function Player({ data }) {
   const nav = useNavigate();
 
   const onTovabbiak = () => {
-    nav(`#kaland`);
+    nav(`#${sectionLinks.KALAND}`);
   };
 
   const [state, dispatch] = useReducer(musicReducer, initialState);

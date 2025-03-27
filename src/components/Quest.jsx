@@ -1,7 +1,7 @@
 import Section, { Block } from "./Section";
 import styles from "../styles/Quest.module.scss";
 import { useEffect, useMemo, useReducer, useRef } from "react";
-import { file } from "../utils/var";
+import { file, sectionLinks } from "../utils/var";
 import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 import { questMusic } from "../utils/music";
@@ -49,7 +49,7 @@ export default function Quest({ data }) {
     <Section
       title={data.cim}
       variant="2"
-      id="kaland"
+      id={sectionLinks.KALAND}
       className={styles.quest}
       style={{
         gridTemplateColumns: showLyrics ? "1fr 2fr" : "2fr 3fr",

@@ -2,7 +2,7 @@ import styles from "../styles/Rendeles.module.scss";
 import Section, { Block } from "./Section";
 import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
-import { file } from "../utils/var";
+import { file, sectionLinks } from "../utils/var";
 
 export default function Rendeles({ data }) {
   const toRendeles = () => {
@@ -12,7 +12,7 @@ export default function Rendeles({ data }) {
   return (
     <Section
       className={styles.rendeles}
-      id="rendeles"
+      id={sectionLinks.RENDELES}
       title={data.cim}
       variant="1"
     >
