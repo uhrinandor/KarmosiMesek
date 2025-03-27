@@ -4,7 +4,7 @@ import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 import { useState, useRef, useEffect, useReducer, useMemo } from "react";
 import { file, sectionLinks } from "../utils/var";
-import { useNavigate } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import music from "../utils/music";
 
 import { ReactComponent as PlayIcon } from "../assets/components/Play.svg";
@@ -15,7 +15,10 @@ import { ReactComponent as MicIcon } from "../assets/components/Mic.svg";
 import { ReactComponent as ListIcon } from "../assets/components/List.svg";
 
 export default function Kaosz({ data }) {
-  const [toPlay, setPlay] = useState(false);
+  const PARAM = "play";
+  const [params] = useSearchParams();
+
+  const [toPlay, setPlay] = useState(params.get(PARAM) === "T" || false);
   const onClick = () => setPlay(true);
 
   return (
