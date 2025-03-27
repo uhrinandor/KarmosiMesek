@@ -26,7 +26,7 @@ export function DataProvider({ children }) {
       .then((json) => {
         setData(json); // Set your state with the fetched data
       })
-      .catch((error) => {
+      .catch(() => {
         setData(null); // Handle the error case
       });
     // eslint-disable-next-line

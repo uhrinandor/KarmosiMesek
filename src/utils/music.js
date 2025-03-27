@@ -1,7 +1,9 @@
+import { URL } from "./var";
+
 const music = [
   {
     nev: "Ellopták a velőscsontom",
-    loc: "http://karmosimesek.hu/music/elloptakaveloscsontom.mp3",
+    loc: `${URL}/music/elloptakaveloscsontom.mp3`,
     duration: 225,
     lyrics: [
       "Jó dolga van bizonyára mindennap az ebnek,\n" +
@@ -75,7 +77,7 @@ const music = [
   },
   {
     nev: "Megugattam a postást kétszer",
-    loc: "http://karmosimesek.hu/music/megugattamapostast.mp3",
+    loc: `${URL}/music/megugattamapostast.mp3`,
     duration: 154,
     lyrics: [
       "Megugattam a postást kétszer, \n" +

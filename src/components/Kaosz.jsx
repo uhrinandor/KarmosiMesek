@@ -3,8 +3,8 @@ import styles from "../styles/Kaosz.module.scss";
 import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 import { useState, useRef, useEffect, useReducer, useMemo } from "react";
-import { file } from "../utils/var";
-import { useNavigate } from "react-router";
+import { file, sectionLinks } from "../utils/var";
+import { useNavigate, useSearchParams } from "react-router";
 import music from "../utils/music";
 
 import { ReactComponent as PlayIcon } from "../assets/components/Play.svg";
@@ -15,7 +15,10 @@ import { ReactComponent as MicIcon } from "../assets/components/Mic.svg";
 import { ReactComponent as ListIcon } from "../assets/components/List.svg";
 
 export default function Kaosz({ data }) {
-  const [toPlay, setPlay] = useState(false);
+  const PARAM = "play";
+  const [params] = useSearchParams();
+
+  const [toPlay, setPlay] = useState(params.get(PARAM) === "T" || false);
   const onClick = () => setPlay(true);
 
   return (
@@ -53,10 +56,7 @@ function Root({ onClick, data }) {
         </Button>
       </Block>
       <Block className={styles.image}>
-        <img
-          src="http://karmosimesek.hu/assets/kaoszkutyak.png"
-          alt="Káosz Kutyák"
-        />
+        <img src={file("kaoszkutyak.png")} alt="Káosz Kutyák" />
       </Block>
     </>
   );
@@ -119,13 +119,7 @@ function Player({ data }) {
   const nav = useNavigate();
 
   const onTovabbiak = () => {
-    nav(`#feladat`);
-    setTimeout(() => {
-      const element = document.getElementById("feladat");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 50);
+    nav(`#${sectionLinks.KALAND}`);
   };
 
   const [state, dispatch] = useReducer(musicReducer, initialState);

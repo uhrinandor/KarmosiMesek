@@ -7,7 +7,7 @@ import { ReactComponent as Kaosz } from "../assets/header/KáoszKutyákIcon.svg"
 import { ReactComponent as Support } from "../assets/header/RendelésIcon.svg";
 import { ReactComponent as Contact } from "../assets/header/KapcsolatIcon.svg";
 import { useNavigate } from "react-router";
-import { file } from "../utils/var";
+import { file, sectionLinks } from "../utils/var";
 
 export default function Header({ data }) {
   return (
@@ -24,16 +24,16 @@ export default function Header({ data }) {
         <MenuItem title={data.kezdolap} to="">
           <Home className={`${styles.icon} ${styles.home}`} />
         </MenuItem>
-        <MenuItem title="SZEREPLŐK" to="szereplok">
+        <MenuItem title="SZEREPLŐK" to={sectionLinks.SZEREPLOK}>
           <Char className={`${styles.icon} ${styles.char}`} />
         </MenuItem>
-        <MenuItem title="KÁOSZ KUTYÁK" to="kaoszkutyak">
+        <MenuItem title="KÁOSZ KUTYÁK" to={sectionLinks.KAOSZKUTYAK}>
           <Kaosz className={`${styles.icon} ${styles.kaosz}`} />
         </MenuItem>
-        <MenuItem title="RENDELÉS" to="rendeles">
+        <MenuItem title="RENDELÉS" to={sectionLinks.RENDELES}>
           <Support className={`${styles.icon} ${styles.order}`} />
         </MenuItem>
-        <MenuItem title="KAPCSOLAT" to="kapcsolat">
+        <MenuItem title="KAPCSOLAT" to={sectionLinks.KAPCSOLAT}>
           <Contact className={`${styles.icon} ${styles.contact}`} />
         </MenuItem>
       </div>
@@ -46,12 +46,6 @@ function MenuItem({ children, title, to }) {
 
   const onClick = () => {
     navigate(`#${to}`);
-    setTimeout(() => {
-      const element = document.getElementById(to);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 50);
   };
   return (
     <div className={styles["menu-item"]} onClick={onClick}>

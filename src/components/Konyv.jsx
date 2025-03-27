@@ -1,11 +1,16 @@
 import Section, { Block } from "./Section";
 import { BlockTitle, BreakText } from "./Text";
 import styles from "../styles/Konyv.module.scss";
-import { file } from "../utils/var";
+import { file, sectionLinks } from "../utils/var";
 
 export default function Konyv({ data }) {
   return (
-    <Section id="akonyv" title={data.cim} variant="1" className={styles.konyv}>
+    <Section
+      id={sectionLinks.KONYV}
+      title={data.cim}
+      variant="1"
+      className={styles.konyv}
+    >
       <Block className={styles.content}>
         <BlockTitle>{data.blokkcim}</BlockTitle>
         {data.szovegek.map((szoveg, i) => (

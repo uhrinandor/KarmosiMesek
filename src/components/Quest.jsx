@@ -1,7 +1,7 @@
 import Section, { Block } from "./Section";
 import styles from "../styles/Quest.module.scss";
 import { useEffect, useMemo, useReducer, useRef } from "react";
-import { file } from "../utils/var";
+import { file, link, sectionLinks } from "../utils/var";
 import { BlockTitle, BreakText } from "./Text";
 import { Button } from "./Button";
 import { questMusic } from "../utils/music";
@@ -49,7 +49,7 @@ export default function Quest({ data }) {
     <Section
       title={data.cim}
       variant="2"
-      id="kaland"
+      id={sectionLinks.KALAND}
       className={styles.quest}
       style={{
         gridTemplateColumns: showLyrics ? "1fr 2fr" : "2fr 3fr",
@@ -118,11 +118,22 @@ export default function Quest({ data }) {
                 <span>{level.szoveg1}</span>
                 <span className={styles.kiemel}>
                   {level.szoveg2.blokk1}
-                  <p>{level.szoveg2.kiemel1}</p>
+                  <p
+                    className={styles.link}
+                    onClick={() => link(data.kapcsolat.facebook.link)}
+                  >
+                    {level.szoveg2.kiemel1}
+                  </p>
                   {level.szoveg2.blokk2}
                   <p>{level.szoveg2.kiemel2}</p>
                   {level.szoveg2.blokk3}
-                  <p>{level.szoveg2.kiemel3}</p>
+
+                  <p
+                    className={styles.link}
+                    onClick={() => link(data.kapcsolat.tiktok.link)}
+                  >
+                    {level.szoveg2.kiemel3}
+                  </p>
                   {level.szoveg2.blokk4}
                 </span>
                 <span className={styles.ui}>{level.zaro}</span>
