@@ -46,12 +46,6 @@ function MenuItem({ children, title, to }) {
 
   const onClick = () => {
     navigate(`#${to}`);
-    setTimeout(() => {
-      const element = document.getElementById(to);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 50);
   };
   return (
     <div className={styles["menu-item"]} onClick={onClick}>

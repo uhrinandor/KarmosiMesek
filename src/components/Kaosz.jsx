@@ -116,13 +116,7 @@ function Player({ data }) {
   const nav = useNavigate();
 
   const onTovabbiak = () => {
-    nav(`#feladat`);
-    setTimeout(() => {
-      const element = document.getElementById("feladat");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 50);
+    nav(`#kaland`);
   };
 
   const [state, dispatch] = useReducer(musicReducer, initialState);

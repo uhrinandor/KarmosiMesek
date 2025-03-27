@@ -10,13 +10,31 @@ import Rendeles from "./components/Rendeles";
 import { SectionNoTitle } from "./components/Section";
 import styles from "./App.module.scss";
 import { DataContext } from "./components/DataContext";
-import { useContext } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import Error from "./components/Error";
+import { useLocation } from "react-router";
 
 function App() {
+  const location = useLocation();
   const data = useContext(DataContext);
+  const hash = useMemo(() => location.hash, [location.hash]);
 
   const charArr = Array.from({ length: 13 }, (_, i) => i + 1);
+
+  useEffect(() => {
+    if (hash) {
+      const scrollToElement = () => {
+        const element = document.getElementById(hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        } else {
+          // Retry scrolling in case the element isn't rendered yet
+          setTimeout(scrollToElement, 10);
+        }
+      };
+      scrollToElement();
+    }
+  }, [hash, location]);
 
   return data ? (
     <div className="app">

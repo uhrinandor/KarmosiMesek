@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { URL } from "../utils/var";
 
 export const DataContext = createContext();
 
@@ -12,7 +13,6 @@ const fetchJSON = async (urls) => {
       const data = await response.json();
       return data; // Return the data if successful
     } catch (error) {
-      console.log(`Error fetching from ${url}:`, error);
     }
   }
   throw new Error("All URLs failed"); // If none of the URLs worked
@@ -25,11 +25,9 @@ export function DataProvider({ children }) {
   useEffect(() => {
     fetchJSON(urls)
       .then((json) => {
-        console.log("Successfully fetched JSON:", json);
         setData(json); // Set your state with the fetched data
       })
-      .catch((error) => {
-        console.error("Error:", error);
+      .catch(() => {
         setData(null); // Handle the error case
       });
     // eslint-disable-next-line
