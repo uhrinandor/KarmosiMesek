@@ -23,13 +23,21 @@ function App() {
 
   useEffect(() => {
     if (hash) {
+      const getRem = () =>
+        parseFloat(getComputedStyle(document.documentElement).fontSize);
       const scrollToElement = () => {
+        const offset = 3 * getRem();
         const element = document.getElementById(hash.slice(1));
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          const pos = element.getBoundingClientRect().top;
+          const offsetPos = pos + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPos,
+            behavior: "smooth",
+          });
         } else {
-          // Retry scrolling in case the element isn't rendered yet
-          setTimeout(scrollToElement, 10);
+          setTimeout(scrollToElement, 100);
         }
       };
       scrollToElement();
