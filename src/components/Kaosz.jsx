@@ -53,10 +53,7 @@ function Root({ onClick, data }) {
         </Button>
       </Block>
       <Block className={styles.image}>
-        <img
-          src="http://karmosimesek.hu/assets/kaoszkutyak.png"
-          alt="Káosz Kutyák"
-        />
+        <img src={file("kaoszkutyak.png")} alt="Káosz Kutyák" />
       </Block>
     </>
   );
